@@ -1,0 +1,112 @@
+{
+  "verified_on": "2026-10-22",
+  "source": "https://api.adsbdb.com/v0/airline/{ICAO}",
+  "records": [
+    {
+      "name": "Air India",
+      "icao": "AIC",
+      "iata": "AI",
+      "country": "India",
+      "country_iso": "IN",
+      "callsign": "AIRINDIA"
+    },
+    {
+      "name": "Akasa Air",
+      "icao": "AKJ",
+      "iata": "QP",
+      "country": "India",
+      "country_iso": "IN",
+      "callsign": null
+    },
+    {
+      "name": "Air India Express",
+      "icao": "AXB",
+      "iata": "IX",
+      "country": "India",
+      "country_iso": "IN",
+      "callsign": "EXPRESS INDIA"
+    },
+    {
+      "name": "British Airways",
+      "icao": "BAW",
+      "iata": "BA",
+      "country": "United Kingdom",
+      "country_iso": "GB",
+      "callsign": "SPEEDBIRD"
+    },
+    {
+      "name": "Lufthansa",
+      "icao": "DLH",
+      "iata": "LH",
+      "country": "Germany",
+      "country_iso": "DE",
+      "callsign": "LUFTHANSA"
+    },
+    {
+      "name": "Etihad Airways",
+      "icao": "ETD",
+      "iata": "EY",
+      "country": "United Arab Emirates",
+      "country_iso": "AE",
+      "callsign": "ETIHAD"
+    },
+    {
+      "name": "IndiGo Airlines",
+      "icao": "IGO",
+      "iata": "6E",
+      "country": "India",
+      "country_iso": "IN",
+      "callsign": "IFLY"
+    },
+    {
+      "name": "Qatar Airways",
+      "icao": "QTR",
+      "iata": "QR",
+      "country": "Qatar",
+      "country_iso": "QA",
+      "callsign": "QATARI"
+    },
+    {
+      "name": "Spicejet",
+      "icao": "SEJ",
+      "iata": "SG",
+      "country": "India",
+      "country_iso": "IN",
+      "callsign": "SPICEJET"
+    },
+    {
+      "name": "Singapore Airlines",
+      "icao": "SIA",
+      "iata": "SQ",
+      "country": "Singapore",
+      "country_iso": "SG",
+      "callsign": "SINGAPORE"
+    },
+    {
+      "name": "Turkish Airlines",
+      "icao": "THY",
+      "iata": "TK",
+      "country": "Turkey",
+      "country_iso": "TR",
+      "callsign": "TURKAIR"
+    },
+    {
+      "name": "Emirates",
+      "icao": "UAE",
+      "iata": "EK",
+      "country": "United Arab Emirates",
+      "country_iso": "AE",
+      "callsign": "EMIRATES"
+    }
+  ],
+  "public_brand_overrides": {
+    "IGO": {
+      "name": "IndiGo",
+      "source": "https://www.goindigo.in/"
+    },
+    "SEJ": {
+      "name": "SpiceJet",
+      "source": "https://www.spicejet.com/"
+    }
+  }
+}
