@@ -1,0 +1,25 @@
+{
+  "retrieved_on": "2026-10-22",
+  "sources": [
+    {
+      "url": "https://query.wikidata.org/sparql",
+      "snapshot_sha256": "3d71002e51ff27d75a1ac1c31285eada89ed87c00a724495cafb1a4c8e775142",
+      "license": "CC0 structured data"
+    },
+    {
+      "url": "https://www.faa.gov/air_traffic/publications/atpubs/cnt_html/chap3_section_3.html",
+      "snapshot_sha256": "ff4ea1eae7f394e2d2bbd544a8df594263a90abb9d55d8e108dae6719e845b79",
+      "license": "US Federal publication; factual assignment records"
+    },
+    {
+      "url": "https://github.com/AviationShop/airline-codes",
+      "snapshot_sha256": "761e1556bbc698760ca518a74ce70209c37a9bd1f8dac0506c254e849ba637fa",
+      "license": "CC0-1.0"
+    }
+  ],
+  "supplemental_name_labels": {
+    "source": "https://www.wikidata.org/w/api.php?action=wbgetentities&props=labels&format=json",
+    "sha256": "c71a65ceb5ff538792b19ddaf05fd4f4e698ff9e815ac9cef9f404bc5d14b9d3",
+    "license": "CC0 structured data"
+  }
+}

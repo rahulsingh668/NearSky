@@ -6,6 +6,11 @@ import java.util.*;
 /** Build-time lettering outlines. No font files or desktop APIs are needed by the APK. */
 public final class OutlineLettering {
     public static void main(String[] args)throws Exception {
+        if(args.length==2&&args[0].equals("--batch")){
+            for(String job:Files.readAllLines(Path.of(args[1])))if(!job.isBlank())render(job.split("\t",-1));
+        }else render(args);
+    }
+    private static void render(String[] args)throws Exception {
         Font font=Font.createFont(Font.TRUETYPE_FONT,Path.of(args[0]).toFile()).deriveFont(100f);
         Shape shape=font.createGlyphVector(new FontRenderContext(null,true,true),args[1]).getOutline();
         Rectangle2D box=shape.getBounds2D();

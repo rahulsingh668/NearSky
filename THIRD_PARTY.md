@@ -17,3 +17,7 @@ The 24 bundled aircraft illustrations are hand-redrawn representations of standa
 Build-time lettering outlines use Liberation Sans and Liberation Serif. The font files are included under `tools/fonts/` solely for regeneration; they are not copied into the Android APK. Copyright and full license notices are in `tools/fonts/LICENSE.txt` and `app/src/main/assets/LICENSE-Liberation.txt`. Liberation is licensed under the SIL Open Font License 1.1. Outlined lettering has no external font dependency when displayed.
 
 Operator identifiers and flight metadata come from the providers described in README.md.
+
+## Static airline research inventory
+
+`data/airlines/` includes normalized Wikidata structured data (CC0), factual FAA company-code assignments and an AviationShop CC0 major-carrier starting set. See [source notes](data/airlines/README.md) and `sources.json` for URLs, date, hashes and limitations. These data notes do not license live positions, routes, photographs or airline marks. No claim of an exhaustive current active-airline register is made.

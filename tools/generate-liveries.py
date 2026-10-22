@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Rebuild the bundled airline illustration catalogue. Python 3 + JDK 17 only."""
 from pathlib import Path
-import html,json,re,subprocess,tempfile,xml.etree.ElementTree as ET
+import html,json,re,subprocess,tempfile,xml.etree.ElementTree as ET,importlib.util
 ROOT=Path(__file__).resolve().parents[1]
 ASSETS=ROOT/'app/src/main/assets'
 BASE=(ROOT/'tools/approved-indigo.svg').read_text()
@@ -34,6 +34,11 @@ CAT=[
 ('FDB','flydubai','flydubai','#057BC1','#F37735','Regular','https://www.flydubai.com/en/help/our-fleet/'),
 ('GFA','Gulf Air','GULF AIR','#092A46','#BC9B54','Regular','https://www.gulfair.com/'),
 ]
+spec=importlib.util.spec_from_file_location('additional',ROOT/'tools/additional-liveries.py')
+additional=importlib.util.module_from_spec(spec);spec.loader.exec_module(additional)
+ORIGINAL_CODES={r[0] for r in CAT}
+CAT+=additional.CAT
+assert len({r[0] for r in CAT})==len(CAT), 'Duplicate airline code in artwork catalogue'
 
 def path(d,color,**kw):
  return '<path d="'+d+'" fill="'+color+'"'+''.join(' '+k.replace('_','-')+'="'+str(v)+'"' for k,v in kw.items())+'/>'
@@ -52,6 +57,7 @@ def oryx(c):
 def crane(c):
  return line('M143 167L192 148L217 139M174 154L151 132M166 160L181 181',c,6)+path('M133 164L158 155L148 174Z',c)
 def tail_mark(code,a,b,logo):
+ if code in additional.PRIMARY:return additional.tail(code,a,b,path,circle,line,text)
  if code=='AIC':
   return path(TAIL,a)+path('M104 164L164 105L232 164L164 224Z','#5B1C45')+line('M111 164L164 112L220 164L164 216Z',b,8)+line('M137 164L164 136L192 164L164 192Z',b,4)
  if code=='SEJ':
@@ -84,6 +90,7 @@ def tail_mark(code,a,b,logo):
  return path(TAIL,a)
 
 def paint(code,a,b):
+ if code in additional.PRIMARY:return additional.paint(code,a,b,path,line)
  if code in ('BAW','SIA','SVA','ANA'):
   if code=='BAW':return path('M75 288Q490 301 1146 293V340H75Z',a)
   if code=='SIA':return path('M74 270H1140V289H74Z',a)+path('M74 266H1140V270H74Z',b)+path('M74 289H1140V293H74Z',b)
@@ -115,6 +122,16 @@ def recolor_engine(svg,color):
 with tempfile.TemporaryDirectory() as temp:
  temp=Path(temp)
  subprocess.run(['javac','-encoding','UTF-8','-d',str(temp),str(ROOT/'tools/OutlineLettering.java')],check=True)
+ jobs=[]
+ for code,name,label,a,b,style,reference in CAT:
+  if code=='IGO':continue
+  font=ROOT/'tools/fonts'/('LiberationSerif-Bold.ttf' if code in ('UAE','QTR') else f'LiberationSans-{style}.ttf')
+  ink=additional.INK.get(code,{'AKJ':b,'AXB':'#1B1C24','UAE':a,'SIA':a,'JAL':'#14171C','AFR':a,'THY':b,'OMA':'#967C40','GFA':'#102D45','KAL':a,'SVA':a}.get(code,a))
+  head_label={'UPS':'UPS','QTR':'QATAR AIRWAYS','ETD':'ETIHAD AIRWAYS','ANA':'ANA','JAL':'JAPAN AIRLINES','KAL':'KOREAN AIR','THA':'THAI AIRWAYS'}.get(code,label)
+  jobs.append('\t'.join(map(str,[font,label,ink,temp/f'{code}.svg'])))
+  jobs.append('\t'.join(map(str,[font,head_label,'#EDF2EE',ASSETS/'wordmarks'/f'{code}.svg'])))
+ batch=temp/'lettering.tsv';batch.write_text('\n'.join(jobs))
+ subprocess.run(['java','-Djava.awt.headless=true','-cp',str(temp),'OutlineLettering','--batch',str(batch)],check=True)
  records=[]
  for code,name,label,a,b,style,reference in CAT:
   target=ASSETS/'liveries'/f'{code}.svg'
@@ -125,12 +142,10 @@ with tempfile.TemporaryDirectory() as temp:
   else:
    font=ROOT/'tools/fonts'/('LiberationSerif-Bold.ttf' if code in ('UAE','QTR') else f'LiberationSans-{style}.ttf')
    outlined=temp/f'{code}.svg'
-   ink={'AKJ':b,'AXB':'#1B1C24','UAE':a,'SIA':a,'JAL':'#14171C','AFR':a,'THY':b,'OMA':'#967C40','GFA':'#102D45','KAL':a,'SVA':a}.get(code,a)
-   subprocess.run(['java','-Djava.awt.headless=true','-cp',str(temp),'OutlineLettering',str(font),label,ink,str(outlined)],check=True)
+   ink=additional.INK.get(code,{'AKJ':b,'AXB':'#1B1C24','UAE':a,'SIA':a,'JAL':'#14171C','AFR':a,'THY':b,'OMA':'#967C40','GFA':'#102D45','KAL':a,'SVA':a}.get(code,a))
    logo=outlined.read_text()
    if code in ('FDX','FDB'):logo=split_color(logo,b,.57 if code=='FDX' else .30)
    head_label={'UPS':'UPS','QTR':'QATAR AIRWAYS','ETD':'ETIHAD AIRWAYS','ANA':'ANA','JAL':'JAPAN AIRLINES','KAL':'KOREAN AIR','THA':'THAI AIRWAYS'}.get(code,label)
-   subprocess.run(['java','-Djava.awt.headless=true','-cp',str(temp),'OutlineLettering',str(font),head_label,'#EDF2EE',str(ASSETS/'wordmarks'/f'{code}.svg')],check=True)
    if code in ('FDX','FDB'):
     header_path=ASSETS/'wordmarks'/f'{code}.svg'
     header_path.write_text(split_color(header_path.read_text(),b,.57 if code=='FDX' else .30))
@@ -138,13 +153,18 @@ with tempfile.TemporaryDirectory() as temp:
    svg=re.sub(r'<title id="title">.*?</title>',f'<title id="title">{html.escape(name)} standard-livery illustration</title>',svg,flags=re.S)
    svg=re.sub(r'<desc id="desc">.*?</desc>','<desc id="desc">Hand-redrawn standard airline colours, tail motif and enlarged English lettering on a representative airliner. Approximation, not an official brand master, type-specific drawing or confirmation of an individual aircraft paint scheme.</desc>',svg,flags=re.S)
    svg=re.sub(r'<!-- White tail,.*?<!-- Rear horizontal stabilizer\. -->',f'<g clip-path="url(#tailClip)">{tail_mark(code,a,b,logo)}</g><!-- Rear horizontal stabilizer. -->',svg,flags=re.S)
-   svg=re.sub(r'<g clip-path="url\(#bodyClip\)">.*?</g>\s*<!-- Window row',f'<g clip-path="url(#bodyClip)">{paint(code,a,b)}{inset(logo,570 if code in ("SIA","BAW","AXB","UPS","JAL","THY") else 660,229,440 if code in ("SIA","BAW","AXB","UPS","JAL","THY") else 350,54)}</g><!-- Window row',svg,flags=re.S)
+   label_y,label_h=(221,32) if code in additional.PRIMARY else (229,54)
+   svg=re.sub(r'<g clip-path="url\(#bodyClip\)">.*?</g>\s*<!-- Window row',f'<g clip-path="url(#bodyClip)">{paint(code,a,b)}{inset(logo,570 if code in ("SIA","BAW","AXB","UPS","JAL","THY") else 660,label_y,440 if code in ("SIA","BAW","AXB","UPS","JAL","THY") else 350,label_h)}</g><!-- Window row',svg,flags=re.S)
    # The preceding replacement removes all IndiGo paint and its vector logo group.
    svg=re.sub(r'<g transform="translate\(277 238\)">.*?</g>','',svg,flags=re.S) if code not in ('AIC','SEJ','AKJ','AXB') else svg
    svg=re.sub(r'<text x="302" y="242".*?</text>','',svg,flags=re.S)
    svg=re.sub(r'<text x="674" y="353".*?</text>','',svg,flags=re.S)
-   engine={'AIC':a,'SEJ':a,'AKJ':a,'AXB':a,'BAW':a,'DLH':'#D3DEE8','ETD':'#CAB991','QTR':'#D0D3D8','SIA':'#D0D8DE','THY':'#E6EDF1','UAE':'#E9ECEC','KAL':'#79ABD0','UPS':'#D6DDE1','FDX':a,'AFR':'#EDF0F1','ANA':'#DBE4EA','JAL':'#E9ECEE','SVA':a,'THA':a,'ALK':'#E3E9EB','OMA':a,'FDB':'#E2E8EC','GFA':'#F0EEE6'}[code]
+   engine={'AIC':a,'SEJ':a,'AKJ':a,'AXB':a,'BAW':a,'DLH':'#D3DEE8','ETD':'#CAB991','QTR':'#D0D3D8','SIA':'#D0D8DE','THY':'#E6EDF1','UAE':'#E9ECEC','KAL':'#79ABD0','UPS':'#D6DDE1','FDX':a,'AFR':'#EDF0F1','ANA':'#DBE4EA','JAL':'#E9ECEE','SVA':a,'THA':a,'ALK':'#E3E9EB','OMA':a,'FDB':'#E2E8EC','GFA':'#F0EEE6'}.get(code,a)
    svg=recolor_engine(svg,engine)
+   if code in additional.BODY:
+    body=additional.BODY[code]
+    svg=re.sub(r'(<linearGradient id="fuselage".*?</linearGradient>)',lambda m:re.sub(r'stop-color="#[A-Fa-f0-9]+"',f'stop-color="{body}"',m[0]),svg,flags=re.S)
+   if code=='ACA':svg=svg.replace('<!-- Cockpit glazing, doors and fine airframe details. -->','<path d="M1056 241Q1109 247 1130 272L1081 276L1048 259Z" fill="#191B1D"/><!-- Cockpit glazing, doors and fine airframe details. -->')
    if code=='KAL':
     svg=svg.replace('stop-color="#FFFFFF"','stop-color="#ABD1EA"',1).replace('stop-color="#F8FBFD"','stop-color="#8FBCE0"',1).replace('stop-color="#E5EBF0"','stop-color="#74A7D0"',1)
    if code=='ETD':svg=svg.replace('stop-color="#FFFFFF"','stop-color="#F6F1E4"',1).replace('stop-color="#F8FBFD"','stop-color="#EFE8D6"',1)
@@ -157,10 +177,15 @@ with tempfile.TemporaryDirectory() as temp:
     svg=svg.replace(ink,'#4D148C')
    target.write_text(svg)
   ET.fromstring(target.read_text())
-  records.append({'icao':code,'name':name,'paint_label':label,'primary':a,'accent':b,'reference':reference,'scheme':'Standard scheme represented; Air India Express tail art and transitional fleet paint vary.','lettering':'Hand-redrawn / outlined English approximation; not official brand master assets.'})
- (ASSETS/'livery-catalogue.json').write_text(json.dumps({'version':1,'date':'2026-10-22','airframe':'Representative shared airliner silhouette; no per-aircraft paint matching.','airlines':records},indent=2)+'\n')
+  records.append({'icao':code,'name':name,'paint_label':label,'primary':a,'accent':b,'reference':reference,'review_status':'bundled' if code in ORIGINAL_CODES else 'bundled_draft','scheme':('Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.' if code not in ORIGINAL_CODES else 'Standard scheme represented; Air India Express tail art and transitional fleet paint vary.'),'lettering':'Hand-redrawn / outlined English approximation; not official brand master assets.'})
+ (ASSETS/'livery-catalogue.json').write_text(json.dumps({'version':2,'date':'2026-10-22','airframe':'Representative shared airliner silhouette; no per-aircraft paint matching.','airlines':records},indent=2)+'\n')
  java='package com.nearsky.tv;\n\n/** Bundled standard-livery catalogue; representative airline schemes, not per-aircraft paint. */\nfinal class AirlineLiveries {\n    private AirlineLiveries(){}\n    static String primary(String code){\n        switch(LiveryDesign.normalized(code)){\n'
  for r in records:java+='            case "'+r['icao']+'": return "'+r['primary']+'";\n'
  java+='            default: return null;\n        }\n    }\n    static boolean contains(String code){return primary(code)!=null;}\n}\n'
  (ROOT/'app/src/main/java/com/nearsky/tv/AirlineLiveries.java').write_text(java)
+ names_file=ROOT/'app/src/main/java/com/nearsky/tv/AirlineNames.java'
+ names=names_file.read_text()
+ assignments='\n'.join('        names.put('+json.dumps(r['icao'])+','+json.dumps(r['name'])+');' for r in sorted(records,key=lambda r:r['icao']))+'\n'
+ names=re.sub(r'        names.put\("AIC".*?(?=        KNOWN=)',assignments,names,flags=re.S)
+ names_file.write_text(names)
  print(f'Generated {len(records)} liveries and heading wordmarks.')

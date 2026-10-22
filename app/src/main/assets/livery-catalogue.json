@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "date": "2026-10-22",
   "airframe": "Representative shared airliner silhouette; no per-aircraft paint matching.",
   "airlines": [
@@ -10,6 +10,7 @@
       "primary": "#203F91",
       "accent": "#7EC4E7",
       "reference": "https://www.airbus.com/en/newsroom/press-releases/2019-10-indigo-signs-for-300-a320neo-family-aircraft",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -20,6 +21,7 @@
       "primary": "#D31B32",
       "accent": "#B69B58",
       "reference": "https://www.airindia.com/in/en/newsroom/press-release/airbus-a350-inauguration-scindia.html",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -30,6 +32,7 @@
       "primary": "#E51D2A",
       "accent": "#F5B334",
       "reference": "https://sg-images.spicejet.com/Magazine/SJ_April23.pdf",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -40,6 +43,7 @@
       "primary": "#F36D30",
       "accent": "#4C2476",
       "reference": "https://www.akasaair.com/",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -50,6 +54,7 @@
       "primary": "#F26B32",
       "accent": "#17A2A0",
       "reference": "https://www.tata.com/newsroom/business/tales-of-india-air-india-express",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -60,6 +65,7 @@
       "primary": "#132952",
       "accent": "#D51C43",
       "reference": "https://www.britishairways.com/",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -70,6 +76,7 @@
       "primary": "#071D49",
       "accent": "#FFFFFF",
       "reference": "https://newsroom.lufthansagroup.com/en/right-on-time-for-the-end-of-the-100th-crane-birthday-first-airbus-a380-in-new-lufthansa-design/",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -80,6 +87,7 @@
       "primary": "#A78C50",
       "accent": "#D2BA85",
       "reference": "https://www.youtube.com/watch?v=fp01PXJ5UmE",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -90,6 +98,7 @@
       "primary": "#681B46",
       "accent": "#B6B7B9",
       "reference": "https://www.qatarairways.com/en-au/press-releases/2006/Mar/aboutus_news_08march06.html",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -100,6 +109,7 @@
       "primary": "#092A50",
       "accent": "#C8A35E",
       "reference": "https://www.singaporeair.com/",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -110,6 +120,7 @@
       "primary": "#D71F2B",
       "accent": "#1E3049",
       "reference": "https://blog.turkishairlines.com/en/mesut-manioglu-pioneer-of-modern-graphic-design/",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -120,6 +131,7 @@
       "primary": "#B89C54",
       "accent": "#D52433",
       "reference": "https://www.emirates.com/media-centre/emirates-unveils-new-signature-livery-for-its-fleet/",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -130,6 +142,7 @@
       "primary": "#102F5D",
       "accent": "#7CB5DE",
       "reference": "https://news.koreanair.com/",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -140,6 +153,7 @@
       "primary": "#472817",
       "accent": "#CDA449",
       "reference": "https://about.ups.com/",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -150,6 +164,7 @@
       "primary": "#4D148C",
       "accent": "#FF6600",
       "reference": "https://www.fedex.com/content/dam/fedex/eu-europe/resources/sprievodca-sluzbami-fedex.pdf",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -160,6 +175,7 @@
       "primary": "#102450",
       "accent": "#E7223C",
       "reference": "https://corporate.airfrance.com/",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -170,6 +186,7 @@
       "primary": "#0753A5",
       "accent": "#52B8E8",
       "reference": "https://www.ana.co.jp/eng/aboutana/press/2011/110622-1.html",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -180,6 +197,7 @@
       "primary": "#131721",
       "accent": "#D51D37",
       "reference": "https://press.jal.co.jp/en/release/201102/003357.html",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -190,6 +208,7 @@
       "primary": "#087E52",
       "accent": "#BEA36B",
       "reference": "https://www.saudia.com/",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -200,6 +219,7 @@
       "primary": "#5A237A",
       "accent": "#D7B26C",
       "reference": "https://www.thaiairways.com/static/common/pdf/royal_orchid_plus/Newletter/Newsletter_Apr-Jun2016_EN_lastest.pdf",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -210,6 +230,7 @@
       "primary": "#006B9E",
       "accent": "#D79824",
       "reference": "https://www.srilankan.com/",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -220,6 +241,7 @@
       "primary": "#077D8C",
       "accent": "#BAA064",
       "reference": "https://www.omanair.com/",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -230,6 +252,7 @@
       "primary": "#057BC1",
       "accent": "#F37735",
       "reference": "https://www.flydubai.com/en/help/our-fleet/",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     },
@@ -240,7 +263,745 @@
       "primary": "#092A46",
       "accent": "#BC9B54",
       "reference": "https://www.gulfair.com/",
+      "review_status": "bundled",
       "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "AAL",
+      "name": "American Airlines",
+      "paint_label": "American",
+      "primary": "#174A80",
+      "accent": "#D52B3A",
+      "reference": "https://www.aa.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "DAL",
+      "name": "Delta Air Lines",
+      "paint_label": "DELTA",
+      "primary": "#09254B",
+      "accent": "#CF163B",
+      "reference": "https://news.delta.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "UAL",
+      "name": "United Airlines",
+      "paint_label": "UNITED",
+      "primary": "#005DAA",
+      "accent": "#59A8DE",
+      "reference": "https://www.united.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "SWA",
+      "name": "Southwest Airlines",
+      "paint_label": "Southwest",
+      "primary": "#2454A4",
+      "accent": "#F9C531",
+      "reference": "https://www.southwest.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "ASA",
+      "name": "Alaska Airlines",
+      "paint_label": "Alaska",
+      "primary": "#123D5B",
+      "accent": "#91B940",
+      "reference": "https://news.alaskaair.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "JBU",
+      "name": "JetBlue",
+      "paint_label": "jetBlue",
+      "primary": "#122C54",
+      "accent": "#28B8D7",
+      "reference": "https://news.jetblue.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "FFT",
+      "name": "Frontier Airlines",
+      "paint_label": "FRONTIER",
+      "primary": "#08754A",
+      "accent": "#535A59",
+      "reference": "https://news.flyfrontier.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "AAY",
+      "name": "Allegiant Air",
+      "paint_label": "allegiant",
+      "primary": "#125BA3",
+      "accent": "#FDB935",
+      "reference": "https://www.allegiantair.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "ACA",
+      "name": "Air Canada",
+      "paint_label": "AIR CANADA",
+      "primary": "#181B1C",
+      "accent": "#E32128",
+      "reference": "https://www.aircanada.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "WJA",
+      "name": "WestJet",
+      "paint_label": "WestJet",
+      "primary": "#003C56",
+      "accent": "#00A8A3",
+      "reference": "https://www.westjet.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "VIR",
+      "name": "Virgin Atlantic",
+      "paint_label": "virgin atlantic",
+      "primary": "#CE143E",
+      "accent": "#682848",
+      "reference": "https://www.virginatlantic.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "EZY",
+      "name": "easyJet",
+      "paint_label": "easyJet",
+      "primary": "#F36B21",
+      "accent": "#FFFFFF",
+      "reference": "https://www.easyjet.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "RYR",
+      "name": "Ryanair",
+      "paint_label": "RYANAIR",
+      "primary": "#123367",
+      "accent": "#F5CA27",
+      "reference": "https://www.ryanair.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "EIN",
+      "name": "Aer Lingus",
+      "paint_label": "Aer Lingus",
+      "primary": "#007F78",
+      "accent": "#72BD47",
+      "reference": "https://www.aerlingus.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "EWG",
+      "name": "Eurowings",
+      "paint_label": "Eurowings",
+      "primary": "#89214A",
+      "accent": "#32ABC7",
+      "reference": "https://www.eurowings.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "CFG",
+      "name": "Condor",
+      "paint_label": "condor",
+      "primary": "#D8A51D",
+      "accent": "#FFFFFF",
+      "reference": "https://www.condor.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "KLM",
+      "name": "KLM",
+      "paint_label": "KLM",
+      "primary": "#008CCB",
+      "accent": "#FFFFFF",
+      "reference": "https://news.klm.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "TRA",
+      "name": "Transavia",
+      "paint_label": "transavia",
+      "primary": "#00A650",
+      "accent": "#FFFFFF",
+      "reference": "https://www.transavia.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "IBE",
+      "name": "Iberia",
+      "paint_label": "IBERIA",
+      "primary": "#CE182B",
+      "accent": "#F0B522",
+      "reference": "https://www.iberia.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "VLG",
+      "name": "Vueling",
+      "paint_label": "vueling",
+      "primary": "#5B5C5E",
+      "accent": "#FFD431",
+      "reference": "https://www.vueling.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "AEA",
+      "name": "Air Europa",
+      "paint_label": "Air Europa",
+      "primary": "#173E80",
+      "accent": "#C71937",
+      "reference": "https://www.aireuropa.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "ITY",
+      "name": "ITA Airways",
+      "paint_label": "ITA AIRWAYS",
+      "primary": "#0764AF",
+      "accent": "#E9E4D9",
+      "reference": "https://www.ita-airways.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "SWR",
+      "name": "SWISS",
+      "paint_label": "SWISS",
+      "primary": "#DC1C2C",
+      "accent": "#FFFFFF",
+      "reference": "https://www.swiss.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "AUA",
+      "name": "Austrian Airlines",
+      "paint_label": "Austrian",
+      "primary": "#D71332",
+      "accent": "#FFFFFF",
+      "reference": "https://www.austrian.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "BEL",
+      "name": "Brussels Airlines",
+      "paint_label": "brussels airlines",
+      "primary": "#BD1D43",
+      "accent": "#133F6D",
+      "reference": "https://www.brusselsairlines.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "SAS",
+      "name": "SAS",
+      "paint_label": "SAS",
+      "primary": "#132A85",
+      "accent": "#C5C9CA",
+      "reference": "https://www.sasgroup.net/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "FIN",
+      "name": "Finnair",
+      "paint_label": "FINNAIR",
+      "primary": "#101E4E",
+      "accent": "#FFFFFF",
+      "reference": "https://www.finnair.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "NAX",
+      "name": "Norwegian",
+      "paint_label": "norwegian",
+      "primary": "#DD2733",
+      "accent": "#152F53",
+      "reference": "https://www.norwegian.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "TAP",
+      "name": "TAP Air Portugal",
+      "paint_label": "TAP AIR PORTUGAL",
+      "primary": "#D81D2D",
+      "accent": "#91BD29",
+      "reference": "https://www.flytap.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "PGT",
+      "name": "Pegasus Airlines",
+      "paint_label": "pegasus",
+      "primary": "#E7B719",
+      "accent": "#DA2637",
+      "reference": "https://www.flypgs.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "AFL",
+      "name": "Aeroflot",
+      "paint_label": "AEROFLOT",
+      "primary": "#103C73",
+      "accent": "#DD243B",
+      "reference": "https://www.aeroflot.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "LOT",
+      "name": "LOT Polish Airlines",
+      "paint_label": "LOT Polish Airlines",
+      "primary": "#123969",
+      "accent": "#FFFFFF",
+      "reference": "https://www.lot.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "AEE",
+      "name": "Aegean Airlines",
+      "paint_label": "AEGEAN",
+      "primary": "#103969",
+      "accent": "#62C8E5",
+      "reference": "https://en.about.aegeanair.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "KAC",
+      "name": "Kuwait Airways",
+      "paint_label": "KUWAIT",
+      "primary": "#143F7C",
+      "accent": "#70B9DC",
+      "reference": "https://www.kuwaitairways.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "ELY",
+      "name": "EL AL",
+      "paint_label": "EL AL",
+      "primary": "#12346D",
+      "accent": "#74A0C0",
+      "reference": "https://www.elal.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "RJA",
+      "name": "Royal Jordanian",
+      "paint_label": "ROYAL JORDANIAN",
+      "primary": "#34363B",
+      "accent": "#B79559",
+      "reference": "https://www.rj.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "MEA",
+      "name": "Middle East Airlines",
+      "paint_label": "MEA",
+      "primary": "#006C46",
+      "accent": "#D32435",
+      "reference": "https://www.mea.com.lb/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "MSR",
+      "name": "EgyptAir",
+      "paint_label": "EGYPTAIR",
+      "primary": "#153F7D",
+      "accent": "#C9AA58",
+      "reference": "https://www.egyptair.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "ETH",
+      "name": "Ethiopian Airlines",
+      "paint_label": "Ethiopian",
+      "primary": "#BE2130",
+      "accent": "#F2C323",
+      "reference": "https://corporate.ethiopianairlines.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "KQA",
+      "name": "Kenya Airways",
+      "paint_label": "KENYA AIRWAYS",
+      "primary": "#CA1D36",
+      "accent": "#087D4F",
+      "reference": "https://www.kenya-airways.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "SAA",
+      "name": "South African Airways",
+      "paint_label": "SOUTH AFRICAN",
+      "primary": "#123C72",
+      "accent": "#E12035",
+      "reference": "https://www.flysaa.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "RAM",
+      "name": "Royal Air Maroc",
+      "paint_label": "ROYAL AIR MAROC",
+      "primary": "#B71D34",
+      "accent": "#1E795C",
+      "reference": "https://www.royalairmaroc.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "TGW",
+      "name": "Scoot",
+      "paint_label": "scoot",
+      "primary": "#F7CC22",
+      "accent": "#232326",
+      "reference": "https://www.flyscoot.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "MAS",
+      "name": "Malaysia Airlines",
+      "paint_label": "malaysia airlines",
+      "primary": "#133F75",
+      "accent": "#CF233B",
+      "reference": "https://www.malaysiaairlines.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "AXM",
+      "name": "AirAsia",
+      "paint_label": "airasia",
+      "primary": "#E3212C",
+      "accent": "#FFFFFF",
+      "reference": "https://newsroom.airasia.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "HVN",
+      "name": "Vietnam Airlines",
+      "paint_label": "Vietnam Airlines",
+      "primary": "#08788A",
+      "accent": "#D2AC59",
+      "reference": "https://www.vietnamairlines.com/content/dam/legacy-site-assets/FilesDownload/AboutUs/Corporate-Identity/GSM-2017-Web1.pdf",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "GIA",
+      "name": "Garuda Indonesia",
+      "paint_label": "Garuda Indonesia",
+      "primary": "#0A6979",
+      "accent": "#60B9BD",
+      "reference": "https://www.garuda-indonesia.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "PAL",
+      "name": "Philippine Airlines",
+      "paint_label": "PHILIPPINE AIRLINES",
+      "primary": "#0C3679",
+      "accent": "#D51D36",
+      "reference": "https://www.philippineairlines.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "CEB",
+      "name": "Cebu Pacific",
+      "paint_label": "cebu pacific",
+      "primary": "#05A4C0",
+      "accent": "#EFCC29",
+      "reference": "https://www.cebupacificair.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "CPA",
+      "name": "Cathay Pacific",
+      "paint_label": "CATHAY PACIFIC",
+      "primary": "#00645B",
+      "accent": "#D5DBD8",
+      "reference": "https://www.cathaypacific.com/cx/en_MY/inspiration/cathay-stories/how-cathay-pacific-refreshed-its-aircraft-livery.html",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "CCA",
+      "name": "Air China",
+      "paint_label": "AIR CHINA",
+      "primary": "#153B72",
+      "accent": "#CC2037",
+      "reference": "https://www.airchina.com.cn/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "CES",
+      "name": "China Eastern Airlines",
+      "paint_label": "CHINA EASTERN",
+      "primary": "#193A76",
+      "accent": "#CE1E3E",
+      "reference": "https://www.ceair.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "CSN",
+      "name": "China Southern Airlines",
+      "paint_label": "CHINA SOUTHERN",
+      "primary": "#16659B",
+      "accent": "#D52B45",
+      "reference": "https://www.csair.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "CHH",
+      "name": "Hainan Airlines",
+      "paint_label": "HAINAN AIRLINES",
+      "primary": "#BD2035",
+      "accent": "#EAB43B",
+      "reference": "https://www.hainanairlines.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "AAR",
+      "name": "Asiana Airlines",
+      "paint_label": "ASIANA AIRLINES",
+      "primary": "#55565A",
+      "accent": "#D52037",
+      "reference": "https://flyasiana.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "QFA",
+      "name": "Qantas",
+      "paint_label": "QANTAS",
+      "primary": "#D62431",
+      "accent": "#FFFFFF",
+      "reference": "https://www.qantasnewsroom.com.au/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "VOZ",
+      "name": "Virgin Australia",
+      "paint_label": "Virgin Australia",
+      "primary": "#C91D3A",
+      "accent": "#FFFFFF",
+      "reference": "https://newsroom.virginaustralia.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "JST",
+      "name": "Jetstar",
+      "paint_label": "Jetstar",
+      "primary": "#30343B",
+      "accent": "#F26522",
+      "reference": "https://www.jetstar.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "ANZ",
+      "name": "Air New Zealand",
+      "paint_label": "AIR NEW ZEALAND",
+      "primary": "#171C1E",
+      "accent": "#FFFFFF",
+      "reference": "https://www.airnewzealand.co.nz/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "FJI",
+      "name": "Fiji Airways",
+      "paint_label": "FIJI AIRWAYS",
+      "primary": "#483322",
+      "accent": "#E2D3AC",
+      "reference": "https://www.fijiairways.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "LAN",
+      "name": "LATAM Airlines",
+      "paint_label": "LATAM",
+      "primary": "#192E63",
+      "accent": "#D7284B",
+      "reference": "https://www.latamairlines.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "AVA",
+      "name": "Avianca",
+      "paint_label": "avianca",
+      "primary": "#D4202D",
+      "accent": "#FFFFFF",
+      "reference": "https://www.avianca.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "CMP",
+      "name": "Copa Airlines",
+      "paint_label": "Copa Airlines",
+      "primary": "#153E7B",
+      "accent": "#C7A968",
+      "reference": "https://www.copaair.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "AMX",
+      "name": "Aeromexico",
+      "paint_label": "AEROMEXICO",
+      "primary": "#102F55",
+      "accent": "#D6213A",
+      "reference": "https://www.aeromexico.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "VOI",
+      "name": "Volaris",
+      "paint_label": "volaris",
+      "primary": "#202127",
+      "accent": "#B32C98",
+      "reference": "https://www.volaris.com/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "GLO",
+      "name": "GOL Linhas Aereas",
+      "paint_label": "GOL",
+      "primary": "#EF6E25",
+      "accent": "#FFFFFF",
+      "reference": "https://www.voegol.com.br/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "AZU",
+      "name": "Azul Brazilian Airlines",
+      "paint_label": "azul",
+      "primary": "#17376C",
+      "accent": "#23A9D6",
+      "reference": "https://www.voeazul.com.br/",
+      "review_status": "bundled_draft",
+      "scheme": "Individually configured airline-colour draft; geometric tail and substitute lettering need visual review against current official fleet imagery.",
       "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
     }
   ]

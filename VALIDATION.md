@@ -1,3 +1,14 @@
+# Version 1.5.0 validation — 22 October 2026
+
+- `assembleDebug`, `assembleDebugAndroidTest`, and `lintDebug` passed.
+- Installed versionCode 8 / versionName 1.5.0 on the TCL TV, retaining saved preferences.
+- Physical TCL instrumentation passed **308 assertions**, including native AndroidSVG parsing and visible-pixel rasterization for **91 aircraft SVGs and 91 wordmark references**.
+- Host XML checks passed for all 182 assets: unique IDs, resolved local references, no scripts or external image requests. Approved IndiGo artwork remains byte-identical.
+- The real-code export contains exactly 91 SVGs with status metadata. The legacy 17,576-code export parses in full and its 91 overrides match source bytes. All bundled aircraft SVGs match the APK bytes.
+- Browser checks: ICAO CPA and IATA CX find Cathay Pacific; the all-identities view retains Spirit NKS as historical. New drafts are labeled as drafts. Country and artwork-status filters are provided.
+- Four rendered contact sheets were inspected; contrast and window-row lettering overlap in new artwork were corrected. This is structural/render validation, not certification of exact airline logos or current paint.
+- Inventory: 3,571 identity/code records, 3,111 distinct codes; 1,794 historical, 1,776 with unverified operating status and one Hawaiian legacy-code record. 91 built designs; 1,685 remaining reference-pending records in the operating-status review queue. None are automatically asserted active.
+
 # Version 1.4.1 validation — 22 October 2026
 
 - Card airline names use the normal sans-serif face at 38px in the 1920 × 1080 design instead of the large branded heading outlines. Aircraft SVG lettering and paint are unchanged.

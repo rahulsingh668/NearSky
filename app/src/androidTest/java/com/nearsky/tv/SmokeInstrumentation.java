@@ -58,7 +58,13 @@ public final class SmokeInstrumentation extends Instrumentation {
                 check(picture.getWidth()==1200 && picture.getHeight()==440,"SVG parses and renders: "+code);
             }
             String[] assetCodes=getTargetContext().getAssets().list("liveries");
-            check(assetCodes!=null&&assetCodes.length==24,"All 24 standard airline assets are bundled");
+            int catalogueCount;
+            try(java.io.InputStream catalogue=getTargetContext().getAssets().open("livery-catalogue.json")){
+                java.io.ByteArrayOutputStream bytes=new java.io.ByteArrayOutputStream();byte[] buffer=new byte[4096];int n;
+                while((n=catalogue.read(buffer))!=-1)bytes.write(buffer,0,n);
+                catalogueCount=new JSONObject(bytes.toString("UTF-8")).getJSONArray("airlines").length();
+            }
+            check(assetCodes!=null&&assetCodes.length==catalogueCount,"Catalogue and bundled SVG assets agree");
             for(String file:assetCodes){
                 String code=file.substring(0,3);
                 check(AirlineLiveries.contains(code)&&!AirlineNames.known(code).isEmpty(),"Bundled airline metadata: "+code);

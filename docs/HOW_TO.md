@@ -1,6 +1,6 @@
 # Build, install and use NearSky
 
-NearSky is a native Android TV / Google TV screensaver. Version 1.4.1 shows the three nearest airborne aircraft across a horizontal TV, with SVG airline illustrations, airline names, flight details, and reference origin/destination routes. The bottom-right credit reads **Developed by Rahul Singh**.
+NearSky is a native Android TV / Google TV screensaver. Version 1.5.0 shows the three nearest airborne aircraft across a horizontal TV, with SVG airline illustrations, airline names, flight details, and reference origin/destination routes. The bottom-right credit reads **Developed by Rahul Singh**.
 
 See the [screenshot gallery](SCREENSHOTS.md) for the live display, menus and settings on a real TCL TV.
 
@@ -93,13 +93,13 @@ Some manufacturers hide third-party screensaver selection. The [README's screens
 - Routes come from an exact callsign lookup in adsbdb. Airport IATA codes are preferred, with ICAO codes as fallback. City names fall back to airport names. **Route unavailable** means the provider has no usable match or the lookup failed.
 - Routes are reference data and can be outdated, reused or inconsistent with the current flight, including during diversions. They are not verified live departure/arrival records. Positive routes are cached in memory for 30 minutes; failed lookups retry after 5 minutes while visible.
 - With fewer than three nearby aircraft, empty slots remain empty. The app does not fill live mode with fictional flights.
-- The 24 bundled carriers use hand-redrawn standard airline colours, simplified tail motifs and enlarged outlined English lettering. Unknown carriers retain labeled concept artwork. All use a representative shared silhouette; individual fleet paint and aircraft types can differ.
+- The 91 bundled carriers (24 existing schemes + 67 review drafts) use individually configured airline colours, simplified tail motifs and enlarged outlined English lettering. Unknown carriers retain labeled concept artwork. All use a representative shared silhouette; individual fleet paint and aircraft types can differ.
 
 ## 7. Customize the artwork or footer
 
 - Change the footer string in `app/src/main/java/com/nearsky/tv/FlightView.java`.
 - Edit an aircraft SVG in `app/src/main/assets/liveries/`, or add an uppercase three-letter `CODE.svg` there. Preserve its 1200 × 440 viewBox. Standard-livery assets use fixed outlined lettering; generic concept fallbacks use the `airline-name` text element for dynamic names.
-- Edit `tools/generate-liveries.py` and run it with Python 3 / JDK 17 to regenerate the 24 standard schemes and brand outline references. Live card names use the normal font in `FlightView.java`. Edit `LiveryDesign.java` for unbundled concept fallbacks.
+- Edit `tools/generate-liveries.py` and run it with Python 3 / JDK 17 to regenerate the 91 airline illustrations and brand outline references. Live card names use the normal font in `FlightView.java`. Edit `LiveryDesign.java` for unbundled concept fallbacks.
 - Generate the complete AAA–ZZZ SVG identifier pack with JDK 17:
 
 ```sh
@@ -135,3 +135,9 @@ Instrumentation can interrupt the app; reopen NearSky afterwards. See [VALIDATIO
 Positions: adsb.fi. Routes, airline names and aircraft metadata: adsbdb. Optional photographs: Airport-data.com. Check [README.md](../README.md#sources) and [THIRD_PARTY.md](../THIRD_PARTY.md) for provider links, personal/non-commercial use terms and bundled library notices.
 
 Selected coordinates are sent to adsb.fi. Callsigns, aircraft hex identifiers and operator codes are sent to adsbdb. Optional image requests go to the photo provider. These services receive your IP address. NearSky requires Internet access but no GPS permission, account or API key, and stops polling when the display stops. It is not an aviation navigation tool.
+
+## Real airline codes and artwork review
+
+Open `docs/AIRLINES.html` locally for searchable ICAO/IATA codes, names, country and artwork status. GitHub-readable listing: [AIRLINES.md](AIRLINES.md). Source data, operating-status limitations and refresh instructions: [data/airlines/README.md](../data/airlines/README.md). The 67 new drafts are not exact brand reproductions. Operating airlines have priority; unknown status requires verification.
+
+The additional real-code-only export contains the 91 bundled SVGs and their catalogue, without unused AAA–ZZZ placeholders. Rebuild it with `python3 tools/build-airline-gallery.py` after regenerating artwork and the inventory. The legacy full-identifier export remains available separately.

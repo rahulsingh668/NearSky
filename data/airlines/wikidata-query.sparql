@@ -1,0 +1,1 @@
+SELECT DISTINCT ?airline ?airlineLabel ?icao ?iata ?countryLabel ?ended WHERE { ?airline wdt:P230 ?icao. ?airline wdt:P31/wdt:P279* wd:Q46970. OPTIONAL {?airline wdt:P229 ?iata} OPTIONAL {?airline wdt:P17 ?country} OPTIONAL {?airline wdt:P576 ?ended} SERVICE wikibase:label {bd:serviceParam wikibase:language "en,mul,fr,es,de,it,pt,ru,zh,ja,ar".}}

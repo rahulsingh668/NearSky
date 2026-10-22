@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="title desc">
+<title id="title">LATAM Airlines standard-livery illustration</title>
+<desc id="desc">Hand-redrawn standard airline colours, tail motif and enlarged English lettering on a representative airliner. Approximation, not an official brand master, type-specific drawing or confirmation of an individual aircraft paint scheme.</desc>
+<defs>
+<linearGradient id="fuselage" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFFFFF"/><stop offset=".45" stop-color="#F8FBFD"/><stop offset=".77" stop-color="#E5EBF0"/><stop offset="1" stop-color="#B7C5D1"/></linearGradient>
+<linearGradient id="blue" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#23429C"/><stop offset=".48" stop-color="#15357E"/><stop offset="1" stop-color="#081D56"/></linearGradient>
+<linearGradient id="wing" x1="0" y1="0" x2=".6" y2="1"><stop stop-color="#F0F5F8"/><stop offset=".52" stop-color="#C6D2DC"/><stop offset="1" stop-color="#7E94A6"/></linearGradient>
+<linearGradient id="engine" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#192E63"/><stop offset=".25" stop-color="#192E63"/><stop offset=".65" stop-color="#192E63"/><stop offset="1" stop-color="#192E63"/></linearGradient>
+<linearGradient id="glass" x1="0" y1="0" x2=".3" y2="1"><stop stop-color="#3D6579"/><stop offset=".55" stop-color="#0E293C"/><stop offset="1" stop-color="#142231"/></linearGradient>
+<clipPath id="bodyClip"><path d="M89 246C137 232 199 218 280 218H963C1026 218 1063 225 1094 245C1120 260 1141 272 1134 284C1126 303 1076 314 1018 315H294C219 312 144 285 89 246Z"/></clipPath><clipPath id="tailClip"><path d="M164 251L83 49Q77 37 91 37H122L314 249Z"/></clipPath>
+<g id="indigo-wordmark"><g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+<path d="M4 2V54"/><path d="M24 54V32C24 12 53 12 53 32V54"/>
+<path d="M99 2V54M99 36C99 12 66 12 66 36C66 60 99 60 99 36"/>
+<path d="M117 23V54"/><path d="M177 12C165 -4 137 -1 131 22C123 49 146 66 167 52C178 45 182 36 180 29H157"/>
+<ellipse cx="211" cy="36" rx="17" ry="19"/></g><circle cx="117" cy="5" r="4.1" fill="currentColor"/></g>
+</defs>
+<ellipse cx="614" cy="375" rx="444" ry="14" fill="#020A16" opacity=".20"/>
+<!-- Far wing and sharklet behind the fuselage. -->
+<path d="M526 254L397 167L380 109L392 110L419 155L663 242Z" fill="#8EA4B6"/>
+<path d="M397 167L380 109L392 110L421 159Z" fill="#192E63"/>
+<path d="M402 160L532 240L586 246L418 157Z" fill="#D7E1E7"/>
+<g clip-path="url(#tailClip)"><path d="M164 251L83 49Q77 37 91 37H122L314 249Z" fill="#192E63"/><path d="M120 137L169 109L211 137L164 164Z" fill="#E64173"/><path d="M135 151L183 123L220 151L174 178Z" fill="#D7284B"/><path d="M150 165L197 137L229 165L184 192Z" fill="#E64173"/><path d="M165 179L211 151L238 179L194 206Z" fill="#D7284B"/></g><!-- Rear horizontal stabilizer. -->
+<path d="M196 261L63 293L47 301L93 307L253 280Z" fill="url(#wing)" stroke="#7D94A7" stroke-width="1"/>
+<path d="M69 293L190 267L224 270L89 300Z" fill="#E8EEF3"/>
+<!-- Fuselage. -->
+<path d="M89 246C137 232 199 218 280 218H963C1026 218 1063 225 1094 245C1120 260 1141 272 1134 284C1126 303 1076 314 1018 315H294C219 312 144 285 89 246Z" fill="url(#fuselage)" stroke="#B7C8D6" stroke-width="1.2"/>
+<g clip-path="url(#bodyClip)"><path d="M75 230Q266 247 449 320H75Z" fill="#192E63"/><path d="M75 236Q244 254 414 320" fill="none" stroke="#D7284B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><svg xmlns="http://www.w3.org/2000/svg" width="350" height="32" viewBox="0 0 338.523 70.797" x="660" y="221" preserveAspectRatio="xMinYMid meet" ><g transform="translate(-5.688 69.797)"><path d="M6.688 -0.000 L6.688 -68.797 L21.094 -68.797 L21.094 -11.141 L58.016 -11.141 L58.016 -0.000 L6.688 -0.000 ZM116.412 0.000 L110.303 -17.578 L84.084 -17.578 L77.975 0.000 L63.568 0.000 L88.678 -68.797 L105.662 -68.797 L130.662 0.000 L116.412 0.000 ZM100.287 -48.188 Q99.709 -49.906 99.146 -51.641 Q98.584 -53.375 98.162 -54.813 Q97.756 -56.250 97.490 -57.172 Q97.225 -58.109 97.162 -58.203 Q97.115 -58.063 96.865 -57.125 Q96.631 -56.203 96.209 -54.781 Q95.803 -53.375 95.240 -51.641 Q94.678 -49.906 94.100 -48.188 L87.303 -28.422 L107.084 -28.422 L100.287 -48.188 ZM171.051 -57.672 L171.051 0.000 L156.645 0.000 L156.645 -57.672 L134.426 -57.672 L134.426 -68.797 L193.316 -68.797 L193.316 -57.672 L171.051 -57.672 ZM249.713 0.000 L243.604 -17.578 L217.385 -17.578 L211.275 0.000 L196.869 0.000 L221.979 -68.797 L238.963 -68.797 L263.963 0.000 L249.713 0.000 ZM233.588 -48.188 Q233.010 -49.906 232.447 -51.641 Q231.885 -53.375 231.463 -54.813 Q231.057 -56.250 230.791 -57.172 Q230.525 -58.109 230.463 -58.203 Q230.416 -58.063 230.166 -57.125 Q229.932 -56.203 229.510 -54.781 Q229.104 -53.375 228.541 -51.641 Q227.979 -49.906 227.400 -48.188 L220.604 -28.422 L240.385 -28.422 L233.588 -48.188 ZM330.414 0.000 L330.414 -41.703 Q330.414 -44.188 330.492 -46.828 Q330.570 -49.469 330.664 -51.656 Q330.805 -54.250 330.914 -56.688 Q329.883 -52.828 328.961 -49.359 Q328.570 -47.906 328.117 -46.344 Q327.680 -44.781 327.258 -43.313 Q326.852 -41.844 326.461 -40.578 Q326.070 -39.313 325.789 -38.375 L313.383 0.000 L303.133 0.000 L290.727 -38.375 Q290.430 -39.313 290.055 -40.578 Q289.695 -41.844 289.273 -43.313 Q288.867 -44.781 288.430 -46.344 Q287.992 -47.906 287.555 -49.359 Q286.570 -52.828 285.492 -56.688 Q285.648 -53.859 285.789 -51.125 Q285.883 -48.781 285.977 -46.188 Q286.086 -43.609 286.086 -41.703 L286.086 0.000 L273.289 0.000 L273.289 -68.797 L292.586 -68.797 L304.883 -30.328 Q305.367 -28.813 305.930 -26.609 Q306.492 -24.422 307.039 -22.359 Q307.617 -19.969 308.305 -17.391 Q308.992 -19.922 309.617 -22.266 Q309.914 -23.297 310.195 -24.359 Q310.492 -25.438 310.789 -26.453 Q311.086 -27.484 311.367 -28.406 Q311.664 -29.344 311.914 -30.078 L324.023 -68.797 L343.211 -68.797 L343.211 0.000 L330.414 0.000 Z" fill="#192E63"/></g></svg></g><!-- Window row passes through the large lettering as on the real aircraft. -->
+<g fill="#213C50" stroke="#D2DCE3" stroke-width="1.1"><rect x="280" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="297" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="314" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="331" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="348" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="365" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="382" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="399" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="416" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="433" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="450" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="467" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="484" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="501" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="518" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="535" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="552" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="569" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="586" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="603" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="620" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="637" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="654" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="671" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="688" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="705" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="722" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="773" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="790" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="807" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="824" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="841" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="858" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="875" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="892" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="909" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="926" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="943" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="960" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="977" y="254" width="7.2" height="10.2" rx="3.1"/><rect x="994" y="254" width="7.2" height="10.2" rx="3.1"/></g>
+<!-- Cockpit glazing, doors and fine airframe details. -->
+<g fill="url(#glass)" stroke="#CED8DF" stroke-width="1.4">
+<path d="M1058 235L1080 243L1096 255L1070 253Z"/><path d="M1040 233L1054 235L1065 253L1040 252Z"/>
+</g>
+<g fill="none" stroke="#819CAF" stroke-width="1.2" opacity=".82">
+<rect x="1020" y="236" width="20" height="53" rx="6"/><path d="M1024 262H1032"/>
+<rect x="241" y="235" width="20" height="52" rx="5"/><path d="M246 262H254"/>
+<rect x="731" y="248" width="13" height="33" rx="3"/><rect x="753" y="248" width="13" height="33" rx="3"/>
+<path d="M1094 280L1109 279M1102 275V285" stroke="#596E7D"/>
+</g>
+
+
+<!-- Near wing, pylon and LEAP-style engine. -->
+<path d="M569 282L651 286L455 350L400 355L436 332Z" fill="url(#wing)" stroke="#A6B8C7" stroke-width="1"/>
+<path d="M576 290L633 292L448 344L417 348L451 333Z" fill="#DCE5EB"/>
+<path d="M541 308L437 343M566 310L466 340" stroke="#9BB0BF" stroke-width="1"/>
+<path d="M401 349L375 318L364 318L382 354L407 360Z" fill="#192E63"/>
+<path d="M666 309L711 310L725 336L680 335Z" fill="#BACAD6"/>
+<path d="M658 333C671 322 710 320 749 328L769 343L766 366C740 380 684 379 663 361Z" fill="url(#engine)" stroke="#173264" stroke-width="1"/>
+<path d="M669 333C696 327 725 329 748 334" stroke="#7891BE" stroke-width="2" fill="none" opacity=".7"/>
+<ellipse cx="765" cy="349" rx="14" ry="22" fill="#C1CFD9"/><ellipse cx="767" cy="349" rx="10" ry="17.6" fill="#071A2A"/>
+<ellipse cx="768" cy="349" rx="6.3" ry="12.4" fill="#163244"/><path d="M769 337L766 346L772 353L766 361" stroke="#607A8C" stroke-width="1" fill="none"/>
+
+<path d="M1004 315L1058 311" stroke="#D3DEE6" stroke-width="1.2" opacity=".8"/>
+</svg>

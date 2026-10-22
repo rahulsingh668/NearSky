@@ -1,18 +1,18 @@
 # NearSky for Android TV / Google TV
 
-Developed by **Rahul Singh** · Current version: **1.4.1**
+Developed by **Rahul Singh** · Current version: **1.5.0**
 
 **[Step-by-step how-to guide](docs/HOW_TO.md)** — build from source, install on a TV, configure location and radius, enable the screensaver, customize liveries and troubleshoot.
 
 A native Android screensaver showing up to three nearby airborne aircraft in three large cards across the full width of a horizontal TV. Defaults to **Ghaziabad (28.6692, 77.4538), within 50 km**. Android 8.0 or newer. No account, GPS permission, API key, backend or subscription required for the current personal-use data sources.
 
-Each card shows a detailed SVG aircraft illustration with enlarged airline lettering on the aircraft and a smaller, plain sans-serif airline name below the image. **24 airlines have hand-redrawn standard-livery schemes**, including the approved IndiGo design, Air India, SpiceJet, Akasa Air, Air India Express, the major international carriers listed in the [livery catalogue](docs/LIVERIES.md), and UPS/FedEx cargo carriers. Other operator codes keep a labeled concept design. These are representative airline illustrations on a shared airliner silhouette, not exact fleet/type drawings or a guarantee of the paint currently on the reported aircraft. English wordmarks and simplified tail motifs are approximations, not official brand master assets.
+Each card shows a detailed SVG aircraft illustration with enlarged airline lettering on the aircraft and a smaller, plain sans-serif airline name below the image. **91 airlines have bundled illustrations: 24 existing schemes and 67 new review drafts**, including the approved IndiGo design, Air India, SpiceJet, Akasa Air, Air India Express, the major international carriers listed in the [livery catalogue](docs/LIVERIES.md), and UPS/FedEx cargo carriers. Other operator codes keep a labeled concept design. These are representative airline illustrations on a shared airliner silhouette, not exact fleet/type drawings or a guarantee of the paint currently on the reported aircraft. English wordmarks and simplified tail motifs are approximations, not official brand master assets.
 
 Cards also show callsign, aircraft model, origin/destination airport codes with city names, registration, distance, direction from you, altitude, ground speed and heading. Optional reference photos matched to the aircraft hex identifier replace the SVG when available. With fewer than three aircraft in range, remaining slots show an empty state.
 
 ## Screenshots
 
-Version 1.4 adds standard airline paint schemes; version 1.4.1 uses smaller, plain sans-serif card names. **[See all 24 liveries](docs/LIVERIES.md)** or **[browse the TV screenshots](docs/SCREENSHOTS.md)** for settings, city presets, sample mode, photos and setup. Earlier settings captures remain from version 1.3.1.
+Version 1.5 adds the real-airline code inventory and 67 illustration drafts. Card names retain the smaller, plain sans-serif style. **[Browse the code list](docs/AIRLINES.md)**, **[open the offline searchable gallery](docs/AIRLINES.html)** or **[see the artwork catalogue](docs/LIVERIES.md)** or **[browse the TV screenshots](docs/SCREENSHOTS.md)** for settings, city presets, sample mode, photos and setup. Earlier settings captures remain from version 1.3.1.
 
 ![Live NearSky screensaver showing three nearby flights, original liveries, reference routes and flight details](docs/screenshots/standard-liveries-live.png)
 
@@ -120,15 +120,15 @@ See `VALIDATION.md` for the checks actually performed and their limitations.
 
 ## Airline SVG liveries
 
-Version 1.4 applies the approved IndiGo illustration style to **24 airlines**: IndiGo, Air India, SpiceJet, Akasa Air, Air India Express, British Airways, Lufthansa, Etihad, Qatar Airways, Singapore Airlines, Turkish Airlines, Emirates, Korean Air, UPS, FedEx Express, Air France, ANA, Japan Airlines, Saudia, Thai Airways, SriLankan Airlines, Oman Air, flydubai and Gulf Air.
+The original approved-style batch covers **24 airlines**: IndiGo, Air India, SpiceJet, Akasa Air, Air India Express, British Airways, Lufthansa, Etihad, Qatar Airways, Singapore Airlines, Turkish Airlines, Emirates, Korean Air, UPS, FedEx Express, Air France, ANA, Japan Airlines, Saudia, Thai Airways, SriLankan Airlines, Oman Air, flydubai and Gulf Air.
 
 - Airline colours, larger English lettering and simplified tail motifs follow representative standard schemes. Air India Express tail artwork varies; fleets may have transitional, leased or special paint. There is no per-registration livery matching.
 - The approved IndiGo paths are preserved. Other English lettering is outlined using open-source Liberation fonts, with serif or sans-serif styling and selected italic/mixed-colour lettering. These are redrawn approximations; official wordmark master files and Arabic lettering are not supplied.
 - `app/src/main/assets/liveries/CODE.svg` contains each editable 1200 × 440 transparent aircraft illustration. `wordmarks/CODE.svg` contains the corresponding brand outline reference. The live card heading uses a simple 38px sans-serif font (at the 1920 × 1080 design scale). Outlines keep typography consistent across TVs without downloading fonts.
 - `livery-catalogue.json` records airline identifiers, colours, references and limitations. [LIVERIES.md](docs/LIVERIES.md) lists the catalogue and regeneration instructions.
 - Unknown codes retain a deterministic original concept illustration and the explicit CONCEPT LIVERY label. Registrations such as `N123AB` and `VT-ANB` are not interpreted as airline codes.
-- Airline names for the 24 bundled carriers are available offline; exact-code adsbdb lookups extend metadata for other carriers. An aircraft's registered owner is never substituted for an airline name.
-- The full `NearSky-SVG-liveries.zip` export includes all 17,576 AAA–ZZZ identifiers. The 24 bundled standard-livery illustrations override the generator; all other entries are concept artwork. This is code coverage, not a claim that all entries are real airlines or verified paint schemes.
+- Airline names for the 91 bundled carriers are available offline; exact-code adsbdb lookups extend metadata for other carriers. An aircraft's registered owner is never substituted for an airline name.
+- The full `NearSky-SVG-liveries.zip` export includes all 17,576 AAA–ZZZ identifiers. The 91 bundled illustrations (including 67 drafts) override the generator; all other entries are concept artwork. This is code coverage, not a claim that all entries are real airlines or verified paint schemes.
 
 Rebuild the bundled catalogue with Python 3 and JDK 17:
 
@@ -148,7 +148,7 @@ Regenerate the full identifier pack:
 - Routes, airline names, aircraft metadata and photo lookup: [adsbdb](https://www.adsbdb.com/), [API source and documentation](https://github.com/mrjackwills/adsbdb).
 - Aircraft reference photographs: [Airport-data.com](https://www.airport-data.com/), copyright their respective photographers. Images remain remotely hosted; credits and individual image URLs are available in the app.
 - Screensaver platform: Android [DreamService](https://developer.android.com/reference/android/service/dreams/DreamService).
-- Aircraft illustrations: hand-redrawn representative standard schemes for 24 carriers plus original concept fallbacks. Airline names and marks remain the property of their owners; no airline endorsement is implied.
+- Aircraft illustrations: 24 existing representative schemes, 67 airline-colour review drafts and original concept fallbacks. Airline names and marks remain the property of their owners; no airline endorsement is implied.
 
 NearSky has been installed and opened on your TCL TV. Manufacturer-specific screensaver selection and idle behavior still need to be checked there.
 

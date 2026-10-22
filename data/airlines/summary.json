@@ -1,0 +1,11 @@
+{
+  "snapshot_date": "2026-10-22",
+  "airline_identity_code_pairs": 3571,
+  "unique_airline_codes": 3111,
+  "historical_identities": 1794,
+  "status_unverified_identities": 1776,
+  "assigned_operator_rows": 6243,
+  "assigned_operator_codes": 6243,
+  "bundled_artwork_codes": 91,
+  "note": "Not a verified current global airline census. Codes may be reused; no end date is not evidence of operation."
+}
