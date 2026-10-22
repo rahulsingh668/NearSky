@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -4 240 68" width="240" height="68" color="#EDF2EE"><g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+<path d="M4 2V54"/><path d="M24 54V32C24 12 53 12 53 32V54"/>
+<path d="M99 2V54M99 36C99 12 66 12 66 36C66 60 99 60 99 36"/>
+<path d="M117 23V54"/><path d="M177 12C165 -4 137 -1 131 22C123 49 146 66 167 52C178 45 182 36 180 29H157"/>
+<ellipse cx="211" cy="36" rx="17" ry="19"/></g><circle cx="117" cy="5" r="4.1" fill="currentColor"/></svg>

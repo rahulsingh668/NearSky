@@ -17,6 +17,18 @@ public final class AirlineNames {
         names.put("SIA","Singapore Airlines");
         names.put("THY","Turkish Airlines");
         names.put("UAE","Emirates");
+        names.put("KAL","Korean Air");
+        names.put("UPS","UPS");
+        names.put("FDX","FedEx Express");
+        names.put("AFR","Air France");
+        names.put("ANA","All Nippon Airways");
+        names.put("JAL","Japan Airlines");
+        names.put("SVA","Saudia");
+        names.put("THA","Thai Airways");
+        names.put("ALK","SriLankan Airlines");
+        names.put("OMA","Oman Air");
+        names.put("FDB","flydubai");
+        names.put("GFA","Gulf Air");
         KNOWN=Collections.unmodifiableMap(names);
     }
     public static String known(String code){return KNOWN.getOrDefault(LiveryDesign.normalized(code),"");}

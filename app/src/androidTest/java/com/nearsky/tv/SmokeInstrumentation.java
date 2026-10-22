@@ -57,6 +57,20 @@ public final class SmokeInstrumentation extends Instrumentation {
                 android.graphics.Picture picture=com.caverock.androidsvg.SVG.getFromString(LiveryDesign.svg(code)).renderToPicture(1200,440);
                 check(picture.getWidth()==1200 && picture.getHeight()==440,"SVG parses and renders: "+code);
             }
+            String[] assetCodes=getTargetContext().getAssets().list("liveries");
+            check(assetCodes!=null&&assetCodes.length==24,"All 24 standard airline assets are bundled");
+            for(String file:assetCodes){
+                String code=file.substring(0,3);
+                check(AirlineLiveries.contains(code)&&!AirlineNames.known(code).isEmpty(),"Bundled airline metadata: "+code);
+                for(String folder:new String[]{"liveries","wordmarks"})try(java.io.InputStream inputSvg=getTargetContext().getAssets().open(folder+"/"+file)){
+                    com.caverock.androidsvg.SVG svg=com.caverock.androidsvg.SVG.getFromInputStream(inputSvg);
+                    android.graphics.Picture picture=svg.renderToPicture(1200,440);
+                    android.graphics.Bitmap bitmap=android.graphics.Bitmap.createBitmap(600,220,android.graphics.Bitmap.Config.ARGB_8888);
+                    android.graphics.Canvas canvas=new android.graphics.Canvas(bitmap);canvas.scale(.5f,.5f);canvas.drawPicture(picture);
+                    int ink=0;for(int y=0;y<220;y+=5)for(int x=0;x<600;x+=5)if(android.graphics.Color.alpha(bitmap.getPixel(x,y))>0)ink++;
+                    bitmap.recycle();check(ink>20,"Native AndroidSVG produces visible artwork: "+folder+"/"+code);
+                }
+            }
             result.putString("stream", "PASS: " + assertions + " data and settings assertions\n");
             finish(Activity.RESULT_OK,result);
         } catch(Throwable error) {

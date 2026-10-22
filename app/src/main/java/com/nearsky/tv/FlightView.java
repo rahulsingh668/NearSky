@@ -86,7 +86,8 @@ public final class FlightView extends View {
         PhotoRepository.Photo photo=photos!=null?photos.get(f.hex,settings.photos,this::invalidate):null;
         if(code.isEmpty()&&photo!=null)code=photo.operator;
         String airlineName=airlineNames!=null?airlineNames.get(code,this::invalidate):AirlineNames.known(code);
-        int accent=Color.parseColor(LiveryDesign.primary(code));
+        String brandColor=AirlineLiveries.primary(code);
+        int accent=Color.parseColor(brandColor==null?LiveryDesign.primary(code):brandColor);
         round(c,x,top,x+w,bottom,24,Color.rgb(21,32,41));
         c.save();Path clip=new Path();clip.addRoundRect(new RectF(x,top,x+w,bottom),24,24,Path.Direction.CW);c.clipPath(clip);
         p.setShader(new LinearGradient(x,top,x+w,490,Color.rgb(31,51,63),Color.rgb(17,31,42),Shader.TileMode.CLAMP));c.drawRect(x,top,x+w,490,p);p.setShader(null);
@@ -101,13 +102,14 @@ public final class FlightView extends View {
         }
         round(c,x+24,246,x+175,284,9,Color.argb(225,8,19,26));
         text(c,rank==0?"01  NEAREST":String.format(Locale.US,"%02d  NEARBY",rank+1),x+38,272,17,MINT,bold);
-        textRight(c,code.isEmpty()?"UNIDENTIFIED OPERATOR":code+(isPhoto?"  /  REFERENCE PHOTO":"  /  CONCEPT LIVERY"),x+w-24,475,14,Color.rgb(204,218,225),regular);
+        textRight(c,code.isEmpty()?"UNIDENTIFIED OPERATOR":code+(isPhoto?"  /  REFERENCE PHOTO":AirlineLiveries.contains(code)?"  /  STANDARD LIVERY":"  /  CONCEPT LIVERY"),x+w-24,475,14,Color.rgb(204,218,225),regular);
         if(isPhoto)textRight(c,"Photo: Airport-data.com via adsbdb",x+w-24,456,12,INK,regular);
         c.restore();
         p.setColor(accent);c.drawRect(x+24,511,x+28,549,p);
-        fit(c,airlineName.isEmpty()?f.title():airlineName,x+43,545,40,w-70,INK,bold);
+        if(!liveries.drawBrand(c,code,new RectF(x+43,500,x+w-26,556)))
+            fit(c,airlineName.isEmpty()?f.title():airlineName,x+43,548,44,w-70,INK,bold);
         String model=photo!=null&&!photo.aircraft.isEmpty()?photo.aircraft:f.description.isEmpty()?f.type.isEmpty()?"Aircraft type unavailable":f.type:f.description;
-        fit(c,(airlineName.isEmpty()?"":f.title()+"  ·  ")+model,x+26,580,21,w-52,MUTED,regular);
+        fit(c,(airlineName.isEmpty()?"":f.title()+"  ·  ")+model,x+26,590,21,w-52,MUTED,regular);
         RouteRepository.Result route=demo||routes==null?null:routes.get(f.callsign,this::invalidate);
         drawRoute(c,x,route);
         double distance=Geo.distanceKm(settings.lat,settings.lon,f.lat,f.lon);
@@ -122,15 +124,15 @@ public final class FlightView extends View {
         metric(c,x+306,891,Double.isFinite(f.heading)?String.format(Locale.US,"%03.0f° %s",f.heading,Geo.compass(f.heading)):"—","HEADING");
     }
     private void drawRoute(Canvas c,float x,RouteRepository.Result result){
-        text(c,"ORIGIN",x+26,610,13,MUTED,bold);
-        text(c,"DESTINATION",x+306,610,13,MUTED,bold);
+        text(c,"ORIGIN",x+26,619,13,MUTED,bold);
+        text(c,"DESTINATION",x+306,619,13,MUTED,bold);
         if(result!=null&&result.route!=null){
             FlightRoute route=result.route;
-            fit(c,route.origin.code,x+26,648,32,218,INK,mono);
-            centered(c,"→",x+277,646,30,MINT,regular);
-            fit(c,route.destination.code,x+306,648,32,244,INK,mono);
-            fit(c,route.origin.city,x+26,676,18,228,MUTED,regular);
-            fit(c,route.destination.city,x+306,676,18,244,MUTED,regular);
+            fit(c,route.origin.code,x+26,655,32,218,INK,mono);
+            centered(c,"→",x+277,653,30,MINT,regular);
+            fit(c,route.destination.code,x+306,655,32,244,INK,mono);
+            fit(c,route.origin.city,x+26,682,18,228,MUTED,regular);
+            fit(c,route.destination.city,x+306,682,18,244,MUTED,regular);
         }else{
             fit(c,demo?"Routes appear for live flights":result!=null&&result.loading?"Looking up route…":"Route unavailable",x+26,647,23,524,MUTED,regular);
         }

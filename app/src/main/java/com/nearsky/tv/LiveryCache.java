@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 final class LiveryCache {
-    private final LruCache<String,Picture> pictures=new LruCache<>(32);
+    private final LruCache<String,Picture> pictures=new LruCache<>(64);
     private final AssetManager assets;
     LiveryCache(AssetManager assets){this.assets=assets;}
     private static String readSvg(InputStream input)throws IOException{
@@ -34,5 +34,21 @@ final class LiveryCache {
             pictures.put(key,picture);
         }
         canvas.drawPicture(picture,bounds);
+    }
+    boolean drawBrand(Canvas canvas,String code,RectF bounds){
+        String operator=LiveryDesign.normalized(code);
+        if(!AirlineLiveries.contains(operator))return false;
+        String key="brand:"+operator;
+        Picture picture=pictures.get(key);
+        if(picture==null)try(InputStream input=assets.open("wordmarks/"+operator+".svg")){
+            picture=SVG.getFromString(readSvg(input)).renderToPicture();
+            pictures.put(key,picture);
+        }catch(IOException|SVGParseException ignored){return false;}
+        if(picture.getWidth()<=0||picture.getHeight()<=0)return false;
+        float scale=Math.min(bounds.width()/picture.getWidth(),bounds.height()/picture.getHeight());
+        float height=picture.getHeight()*scale;
+        float top=bounds.top+(bounds.height()-height)/2;
+        canvas.drawPicture(picture,new RectF(bounds.left,top,bounds.left+picture.getWidth()*scale,top+height));
+        return true;
     }
 }

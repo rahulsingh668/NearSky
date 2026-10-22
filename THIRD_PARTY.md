@@ -10,4 +10,10 @@ SVG parsing and rendering: AndroidSVG by Paul LeBeau and contributors.
 - License: Apache License, Version 2.0. The full text is bundled at `app/src/main/assets/Apache-2.0.txt` and included in this source archive.
 - The unmodified upstream JAR is included in `app/libs/androidsvg-1.4.jar` so builds can use the same renderer without fetching an extra dependency.
 
-All generated livery graphics are original NearSky concept art. They do not reproduce official airline liveries, logos or other supplied image assets. Operator identifiers and actual flight metadata come from the data providers described in README.md.
+## Airline illustrations and lettering
+
+The 24 bundled aircraft illustrations are hand-redrawn representations of standard airline schemes. Their English lettering and simplified tail marks are approximations, not official brand master assets or a guarantee of a particular aircraft's paint. Airline names and marks belong to their respective owners; no endorsement is implied. The unbundled identifier fallbacks remain original concept artwork.
+
+Build-time lettering outlines use Liberation Sans and Liberation Serif. The font files are included under `tools/fonts/` solely for regeneration; they are not copied into the Android APK. Copyright and full license notices are in `tools/fonts/LICENSE.txt` and `app/src/main/assets/LICENSE-Liberation.txt`. Liberation is licensed under the SIL Open Font License 1.1. Outlined lettering has no external font dependency when displayed.
+
+Operator identifiers and flight metadata come from the providers described in README.md.

@@ -12,10 +12,11 @@ public final class ExportLiveries {
             for(char a='A';a<='Z';a++) for(char b='A';b<='Z';b++) for(char c='A';c<='Z';c++) {
                 String code=""+a+b+c;
                 zip.putNextEntry(new ZipEntry("liveries/"+code+".svg"));
-                zip.write(LiveryDesign.svg(code).getBytes(StandardCharsets.UTF_8));zip.closeEntry();count++;
+                Path override=Path.of("app/src/main/assets/liveries/"+code+".svg");
+                zip.write(Files.exists(override)?Files.readAllBytes(override):LiveryDesign.svg(code).getBytes(StandardCharsets.UTF_8));zip.closeEntry();count++;
             }
             zip.putNextEntry(new ZipEntry("README.txt"));
-            zip.write(("NearSky original SVG concept liveries\n\n17,576 files cover the complete AAA-ZZZ identifier space. This is code coverage, not a claim that 17,576 airlines exist. Colors and patterns are original concept art, with verified public airline names for the 12 bundled examples. Other codes keep code lettering until a verified name is supplied. Official wordmark typography is not reproduced. Unassigned codes are included deliberately so newly assigned codes are covered. The application uses the same generator on demand.\n\nRegenerate with tools/export-liveries.sh. Artwork requires no external images, fonts or scripts. SVG files are editable in vector editors.\n").getBytes(StandardCharsets.UTF_8));zip.closeEntry();
+            zip.write(("NearSky SVG liveries\n\n24 bundled hand-redrawn standard airline schemes take precedence over the generated artwork. English lettering is enlarged and redrawn/outlined; these are representative illustrations, not official brand masters, aircraft-type drawings or confirmation of the paint on a specific aircraft. Brand names and marks belong to their owners. The rest of the 17,576 AAA-ZZZ identifiers retain clearly labelled original concept designs. This is identifier coverage, not a count of actual airlines or verified liveries.\n\nRebuild the 24 catalogue assets with python3 tools/generate-liveries.py (Python 3 and JDK 17). Regenerate this pack with tools/export-liveries.sh. No external images, fonts or scripts are needed at SVG display time. See the source livery-catalogue.json and docs/LIVERIES.md for references, limitations and lettering license notices.\n").getBytes(StandardCharsets.UTF_8));zip.closeEntry();
         }
         System.out.println("Exported "+count+" SVGs to "+target);
     }

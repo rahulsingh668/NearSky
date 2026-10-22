@@ -1,8 +1,16 @@
 # NearSky screenshot gallery
 
-Actual, unedited 1920 × 1080 captures of NearSky **1.3.1** on a TCL Android TV, taken on 22 October 2026. The live screens show real provider responses at capture time; routes are reference data and may be outdated. Sample flights are explicitly labeled DEMO. No mockup screens are included.
+Actual, unedited 1920 × 1080 captures from a TCL Android TV, taken on 22 October 2026. The new livery screens below are from **1.4**; the remaining settings/feature captures document **1.3.1**. The live screens show real provider responses at capture time; routes are reference data and may be outdated. Sample flights are explicitly labeled DEMO. No mockup screens are included.
 
 [Back to the README](../README.md) · [Build and setup guide](HOW_TO.md)
+
+## Version 1.4 — standard airline liveries and larger names
+
+The live system screensaver uses the new standard schemes and outlined headings. The sample capture clearly labels its fictional positions and does not fetch routes for its sample callsigns. See the [24-airline catalogue](LIVERIES.md) for all designs and references.
+
+![Version 1.4 live screensaver](screenshots/standard-liveries-live.png)
+
+![Version 1.4 clearly labeled sample screen](screenshots/standard-liveries-demo.png)
 
 ## Live screensaver
 

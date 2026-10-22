@@ -1,6 +1,6 @@
 # Build, install and use NearSky
 
-NearSky is a native Android TV / Google TV screensaver. Version 1.3.1 shows the three nearest airborne aircraft across a horizontal TV, with original SVG concept liveries, airline names, flight details, and reference origin/destination routes. The bottom-right credit reads **Developed by Rahul Singh**.
+NearSky is a native Android TV / Google TV screensaver. Version 1.4 shows the three nearest airborne aircraft across a horizontal TV, with SVG airline illustrations, airline names, flight details, and reference origin/destination routes. The bottom-right credit reads **Developed by Rahul Singh**.
 
 See the [screenshot gallery](SCREENSHOTS.md) for the live display, menus and settings on a real TCL TV.
 
@@ -76,7 +76,7 @@ A file-transfer app is another option: transfer the APK, authorize that app to i
 4. Default: Ghaziabad, latitude `28.6692`, longitude `77.4538`, radius **50 km**. Radius can be 1–200 km.
 5. Save, then select **Full-screen preview**. Back reveals the menu; Menu opens location settings.
 
-Original custom SVG liveries are the default. **Prefer photos instead of custom SVG liveries** enables optional aircraft reference photos. **Try sample flights** demonstrates the layout with a visible DEMO indicator; the actual screensaver always uses live positions.
+SVG airline illustrations are the default. **Prefer photos instead of custom SVG liveries** enables optional aircraft reference photos. **Try sample flights** demonstrates the layout with a visible DEMO indicator; the actual screensaver always uses live positions.
 
 ## 5. Use it as the idle screensaver
 
@@ -93,13 +93,13 @@ Some manufacturers hide third-party screensaver selection. The [README's screens
 - Routes come from an exact callsign lookup in adsbdb. Airport IATA codes are preferred, with ICAO codes as fallback. City names fall back to airport names. **Route unavailable** means the provider has no usable match or the lookup failed.
 - Routes are reference data and can be outdated, reused or inconsistent with the current flight, including during diversions. They are not verified live departure/arrival records. Positive routes are cached in memory for 30 minutes; failed lookups retry after 5 minutes while visible.
 - With fewer than three nearby aircraft, empty slots remain empty. The app does not fill live mode with fictional flights.
-- Livery palettes and patterns are original concepts using a generic airliner silhouette. Names use ordinary lettering; these are not official airline liveries or exact aircraft-type illustrations.
+- The 24 bundled carriers use hand-redrawn standard airline colours, simplified tail motifs and enlarged outlined English lettering. Unknown carriers retain labeled concept artwork. All use a representative shared silhouette; individual fleet paint and aircraft types can differ.
 
 ## 7. Customize the artwork or footer
 
 - Change the footer string in `app/src/main/java/com/nearsky/tv/FlightView.java`.
-- Edit a sample SVG in `app/src/main/assets/liveries/`, or add an uppercase three-letter `CODE.svg` there. Preserve its 1200 × 440 viewBox and the `airline-name` text element to allow dynamic airline-name updates.
-- Edit `LiveryDesign.java` to change generated designs for all operator codes.
+- Edit an aircraft SVG in `app/src/main/assets/liveries/`, or add an uppercase three-letter `CODE.svg` there. Preserve its 1200 × 440 viewBox. Standard-livery assets use fixed outlined lettering; generic concept fallbacks use the `airline-name` text element for dynamic names.
+- Edit `tools/generate-liveries.py` and run it with Python 3 / JDK 17 to regenerate the 24 standard schemes and heading wordmarks. Edit `LiveryDesign.java` for unbundled concept fallbacks.
 - Generate the complete AAA–ZZZ SVG identifier pack with JDK 17:
 
 ```sh

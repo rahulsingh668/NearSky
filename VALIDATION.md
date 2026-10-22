@@ -1,3 +1,14 @@
+# Version 1.4 validation — 22 October 2026
+
+- Applied the approved IndiGo artwork unchanged and added hand-redrawn standard schemes for 23 other carriers, with larger outlined English headings, carrier colours and simplified tail marks. Unknown codes retain labeled concept artwork. All illustrations use a representative shared airliner, not exact per-type geometry or per-registration paint.
+- All **48 assets** (24 aircraft + 24 wordmarks) passed host XML, unique-ID, local-reference and no-external-image/script checks. The approved IndiGo SVG is byte-identical to its review source.
+- `assembleDebug assembleDebugAndroidTest lintDebug` passed. APK signature verified. Version code 6 / version name 1.4.
+- Installed the final APK on the physical TCL Smart TV with existing settings preserved. **107 native data/settings/rendering assertions passed**, including rendering all 48 bundled SVGs with AndroidSVG and checking for painted pixels.
+- Visually inspected the real 1920 × 1080 sample screen with Air India, IndiGo and SpiceJet; lettering and metrics fit. The live DreamService was subsequently started again. New captures are in `docs/screenshots/standard-liveries-demo.png` and `standard-liveries-live.png`.
+- Re-exported the full **17,576-code SVG pack**; every file parses as XML and all 24 bundled overrides match the source exactly. Remaining identifiers are original concept artwork, not verified standard liveries.
+- Artwork/English brand lettering are approximations. Complex tail marks are simplified, Arabic wordmarks are not supplied, and fleet transitions, leases, special paint and Air India Express tail variants are not matched individually. The standard Lufthansa scheme is used rather than anniversary specials; Korean Air represents the 2025 blue/KOREAN scheme.
+- The existing 26 host airline-name checks and 14 route checks were not repeated because the parser/generator behavior they exercise was unchanged. Native regression checks cover the modified rendering integration. A long-duration TV soak test was not performed.
+
 # Version 1.3.1 validation — 22 October 2026
 
 - Changed the bottom-right footer to “Developed by Rahul Singh”. Version code 5 / version 1.3.1.

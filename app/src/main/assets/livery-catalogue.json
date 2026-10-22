@@ -1,0 +1,247 @@
+{
+  "version": 1,
+  "date": "2026-10-22",
+  "airframe": "Representative shared airliner silhouette; no per-aircraft paint matching.",
+  "airlines": [
+    {
+      "icao": "IGO",
+      "name": "IndiGo",
+      "paint_label": "IndiGo",
+      "primary": "#203F91",
+      "accent": "#7EC4E7",
+      "reference": "https://www.airbus.com/en/newsroom/press-releases/2019-10-indigo-signs-for-300-a320neo-family-aircraft",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "AIC",
+      "name": "Air India",
+      "paint_label": "AIR INDIA",
+      "primary": "#D31B32",
+      "accent": "#B69B58",
+      "reference": "https://www.airindia.com/in/en/newsroom/press-release/airbus-a350-inauguration-scindia.html",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "SEJ",
+      "name": "SpiceJet",
+      "paint_label": "SpiceJet",
+      "primary": "#E51D2A",
+      "accent": "#F5B334",
+      "reference": "https://sg-images.spicejet.com/Magazine/SJ_April23.pdf",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "AKJ",
+      "name": "Akasa Air",
+      "paint_label": "Akasa Air",
+      "primary": "#F36D30",
+      "accent": "#4C2476",
+      "reference": "https://www.akasaair.com/",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "AXB",
+      "name": "Air India Express",
+      "paint_label": "air india express",
+      "primary": "#F26B32",
+      "accent": "#17A2A0",
+      "reference": "https://www.tata.com/newsroom/business/tales-of-india-air-india-express",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "BAW",
+      "name": "British Airways",
+      "paint_label": "BRITISH AIRWAYS",
+      "primary": "#132952",
+      "accent": "#D51C43",
+      "reference": "https://www.britishairways.com/",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "DLH",
+      "name": "Lufthansa",
+      "paint_label": "Lufthansa",
+      "primary": "#071D49",
+      "accent": "#FFFFFF",
+      "reference": "https://newsroom.lufthansagroup.com/en/right-on-time-for-the-end-of-the-100th-crane-birthday-first-airbus-a380-in-new-lufthansa-design/",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "ETD",
+      "name": "Etihad Airways",
+      "paint_label": "ETIHAD",
+      "primary": "#A78C50",
+      "accent": "#D2BA85",
+      "reference": "https://www.youtube.com/watch?v=fp01PXJ5UmE",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "QTR",
+      "name": "Qatar Airways",
+      "paint_label": "QATAR",
+      "primary": "#681B46",
+      "accent": "#B6B7B9",
+      "reference": "https://www.qatarairways.com/en-au/press-releases/2006/Mar/aboutus_news_08march06.html",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "SIA",
+      "name": "Singapore Airlines",
+      "paint_label": "SINGAPORE AIRLINES",
+      "primary": "#092A50",
+      "accent": "#C8A35E",
+      "reference": "https://www.singaporeair.com/",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "THY",
+      "name": "Turkish Airlines",
+      "paint_label": "TURKISH AIRLINES",
+      "primary": "#D71F2B",
+      "accent": "#1E3049",
+      "reference": "https://blog.turkishairlines.com/en/mesut-manioglu-pioneer-of-modern-graphic-design/",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "UAE",
+      "name": "Emirates",
+      "paint_label": "Emirates",
+      "primary": "#B89C54",
+      "accent": "#D52433",
+      "reference": "https://www.emirates.com/media-centre/emirates-unveils-new-signature-livery-for-its-fleet/",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "KAL",
+      "name": "Korean Air",
+      "paint_label": "KOREAN",
+      "primary": "#102F5D",
+      "accent": "#7CB5DE",
+      "reference": "https://news.koreanair.com/",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "UPS",
+      "name": "UPS",
+      "paint_label": "Worldwide Services",
+      "primary": "#472817",
+      "accent": "#CDA449",
+      "reference": "https://about.ups.com/",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "FDX",
+      "name": "FedEx Express",
+      "paint_label": "FedEx",
+      "primary": "#4D148C",
+      "accent": "#FF6600",
+      "reference": "https://www.fedex.com/content/dam/fedex/eu-europe/resources/sprievodca-sluzbami-fedex.pdf",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "AFR",
+      "name": "Air France",
+      "paint_label": "AIRFRANCE",
+      "primary": "#102450",
+      "accent": "#E7223C",
+      "reference": "https://corporate.airfrance.com/",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "ANA",
+      "name": "All Nippon Airways",
+      "paint_label": "ANA",
+      "primary": "#0753A5",
+      "accent": "#52B8E8",
+      "reference": "https://www.ana.co.jp/eng/aboutana/press/2011/110622-1.html",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "JAL",
+      "name": "Japan Airlines",
+      "paint_label": "JAPAN AIRLINES",
+      "primary": "#131721",
+      "accent": "#D51D37",
+      "reference": "https://press.jal.co.jp/en/release/201102/003357.html",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "SVA",
+      "name": "Saudia",
+      "paint_label": "SAUDIA",
+      "primary": "#087E52",
+      "accent": "#BEA36B",
+      "reference": "https://www.saudia.com/",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "THA",
+      "name": "Thai Airways",
+      "paint_label": "THAI",
+      "primary": "#5A237A",
+      "accent": "#D7B26C",
+      "reference": "https://www.thaiairways.com/static/common/pdf/royal_orchid_plus/Newletter/Newsletter_Apr-Jun2016_EN_lastest.pdf",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "ALK",
+      "name": "SriLankan Airlines",
+      "paint_label": "SriLankan",
+      "primary": "#006B9E",
+      "accent": "#D79824",
+      "reference": "https://www.srilankan.com/",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "OMA",
+      "name": "Oman Air",
+      "paint_label": "OMAN AIR",
+      "primary": "#077D8C",
+      "accent": "#BAA064",
+      "reference": "https://www.omanair.com/",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "FDB",
+      "name": "flydubai",
+      "paint_label": "flydubai",
+      "primary": "#057BC1",
+      "accent": "#F37735",
+      "reference": "https://www.flydubai.com/en/help/our-fleet/",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    },
+    {
+      "icao": "GFA",
+      "name": "Gulf Air",
+      "paint_label": "GULF AIR",
+      "primary": "#092A46",
+      "accent": "#BC9B54",
+      "reference": "https://www.gulfair.com/",
+      "scheme": "Standard scheme represented; Air India Express tail art and transitional fleet paint vary.",
+      "lettering": "Hand-redrawn / outlined English approximation; not official brand master assets."
+    }
+  ]
+}
