@@ -2,6 +2,8 @@
 
 NearSky is a native Android TV / Google TV screensaver. Version 1.3.1 shows the three nearest airborne aircraft across a horizontal TV, with original SVG concept liveries, airline names, flight details, and reference origin/destination routes. The bottom-right credit reads **Developed by Rahul Singh**.
 
+See the [screenshot gallery](SCREENSHOTS.md) for the live display, menus and settings on a real TCL TV.
+
 ## 1. Get the source
 
 ```sh

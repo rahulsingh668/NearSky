@@ -8,6 +8,22 @@ A native Android screensaver showing up to three nearby airborne aircraft in thr
 
 Each card shows an original SVG concept livery with the real airline name on its fuselage. The airline name is also the card heading, followed by callsign, aircraft model, origin and destination airport codes with city names, registration, distance, direction from you, altitude, ground speed and heading. The aircraft art uses a generic airliner silhouette, not an exact fleet/type depiction. Colors and tail motifs are original designs. Airline names use their actual public names where verified, in ordinary lettering; official wordmark typography is not reproduced. Reference photos are an optional preference; when enabled, a photo matched to the aircraft's ICAO hex identifier replaces the SVG if available. Coverage and photos are not guaranteed. With fewer than three aircraft in range, remaining slots show an empty state.
 
+## Screenshots
+
+Actual captures from a TCL Android TV running NearSky 1.3.1. **[View the complete nine-screen gallery](docs/SCREENSHOTS.md)** for all settings, city presets, sample mode, reference photos, screensaver setup and source credits.
+
+![Live NearSky screensaver showing three nearby flights, original liveries, reference routes and flight details](docs/screenshots/live-screensaver.png)
+
+| Main menu | Location and radius |
+| --- | --- |
+| ![NearSky main menu](docs/screenshots/main-menu.png) | ![Editable location coordinates and search radius](docs/screenshots/location-settings.png) |
+
+| City presets | Photo preference |
+| --- | --- |
+| ![City preset selector](docs/screenshots/city-presets.png) | ![SVG or reference-photo preference](docs/screenshots/photo-preference.png) |
+
+Live routes are provider reference data and may be outdated. The gallery labels sample mode separately and includes photo credits where applicable.
+
 ## Install
 
 The supplied `NearSky-debug.apk` is a debug-signed, sideloadable build. It is not a Play Store release. Install it using a TV file-transfer application or ADB. On the TV, authorize installation from the file-transfer application if prompted.
