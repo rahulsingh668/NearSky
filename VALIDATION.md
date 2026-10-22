@@ -1,3 +1,9 @@
+# Version 1.4.1 validation — 22 October 2026
+
+- Card airline names use the normal sans-serif face at 38px in the 1920 × 1080 design instead of the large branded heading outlines. Aircraft SVG lettering and paint are unchanged.
+- `assembleDebug` passed and APK signature verified. Installed version code 7 / version name 1.4.1 on the TCL TV with saved preferences retained.
+- Visually inspected the real live display: IndiGo and Air India Express names fit clearly in the smaller simple font. No data or SVG logic changed; the previous 107 native assertions were not rerun for this cosmetic adjustment.
+
 # Version 1.4 validation — 22 October 2026
 
 - Applied the approved IndiGo artwork unchanged and added hand-redrawn standard schemes for 23 other carriers, with larger outlined English headings, carrier colours and simplified tail marks. Unknown codes retain labeled concept artwork. All illustrations use a representative shared airliner, not exact per-type geometry or per-registration paint.

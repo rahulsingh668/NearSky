@@ -1,6 +1,6 @@
 # Build, install and use NearSky
 
-NearSky is a native Android TV / Google TV screensaver. Version 1.4 shows the three nearest airborne aircraft across a horizontal TV, with SVG airline illustrations, airline names, flight details, and reference origin/destination routes. The bottom-right credit reads **Developed by Rahul Singh**.
+NearSky is a native Android TV / Google TV screensaver. Version 1.4.1 shows the three nearest airborne aircraft across a horizontal TV, with SVG airline illustrations, airline names, flight details, and reference origin/destination routes. The bottom-right credit reads **Developed by Rahul Singh**.
 
 See the [screenshot gallery](SCREENSHOTS.md) for the live display, menus and settings on a real TCL TV.
 
@@ -99,7 +99,7 @@ Some manufacturers hide third-party screensaver selection. The [README's screens
 
 - Change the footer string in `app/src/main/java/com/nearsky/tv/FlightView.java`.
 - Edit an aircraft SVG in `app/src/main/assets/liveries/`, or add an uppercase three-letter `CODE.svg` there. Preserve its 1200 × 440 viewBox. Standard-livery assets use fixed outlined lettering; generic concept fallbacks use the `airline-name` text element for dynamic names.
-- Edit `tools/generate-liveries.py` and run it with Python 3 / JDK 17 to regenerate the 24 standard schemes and heading wordmarks. Edit `LiveryDesign.java` for unbundled concept fallbacks.
+- Edit `tools/generate-liveries.py` and run it with Python 3 / JDK 17 to regenerate the 24 standard schemes and brand outline references. Live card names use the normal font in `FlightView.java`. Edit `LiveryDesign.java` for unbundled concept fallbacks.
 - Generate the complete AAA–ZZZ SVG identifier pack with JDK 17:
 
 ```sh

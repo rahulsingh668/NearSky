@@ -1,6 +1,6 @@
 # Standard airline livery catalogue
 
-NearSky 1.4 includes **24 hand-redrawn standard schemes**, following the approved IndiGo illustration style. All have larger English lettering on the fuselage and scalable outlined headings on their flight cards.
+NearSky 1.4 includes **24 hand-redrawn standard schemes**, following the approved IndiGo illustration style. All have larger English lettering on the fuselage. Version 1.4.1 uses a smaller, plain sans-serif airline name below each image; airline-style lettering stays on the aircraft.
 
 The drawings use a shared representative airliner silhouette. They do not identify an aircraft's actual paint, exact aircraft type, transitional branding, wet lease or special scheme. English lettering and tail marks are simplified redraws, not official brand master files; Arabic lettering is not supplied. Air India Express tail textiles vary; one illustrative pattern is used. Korean Air uses the 2025 blue/KOREAN scheme. Lufthansa uses its standard white-body/deep-blue-tail scheme rather than the 2026 anniversary special.
 
@@ -35,7 +35,7 @@ The drawings use a shared representative airliner silhouette. They do not identi
 
 ## Artwork files
 
-`app/src/main/assets/liveries/CODE.svg`: editable transparent 1200 × 440 aircraft art. `app/src/main/assets/wordmarks/CODE.svg`: English heading outlines. `livery-catalogue.json`: identifiers, palette, references and limitations. There are no downloaded images, scripts, external fonts or runtime artwork requests in these assets.
+`app/src/main/assets/liveries/CODE.svg`: editable transparent 1200 × 440 aircraft art. `app/src/main/assets/wordmarks/CODE.svg`: English brand outline references (not used for the live card names). `livery-catalogue.json`: identifiers, palette, references and limitations. There are no downloaded images, scripts, external fonts or runtime artwork requests in these assets.
 
 Rebuild with Python 3 and JDK 17:
 

@@ -106,8 +106,7 @@ public final class FlightView extends View {
         if(isPhoto)textRight(c,"Photo: Airport-data.com via adsbdb",x+w-24,456,12,INK,regular);
         c.restore();
         p.setColor(accent);c.drawRect(x+24,511,x+28,549,p);
-        if(!liveries.drawBrand(c,code,new RectF(x+43,500,x+w-26,556)))
-            fit(c,airlineName.isEmpty()?f.title():airlineName,x+43,548,44,w-70,INK,bold);
+        fit(c,airlineName.isEmpty()?f.title():airlineName,x+43,544,38,w-70,INK,regular);
         String model=photo!=null&&!photo.aircraft.isEmpty()?photo.aircraft:f.description.isEmpty()?f.type.isEmpty()?"Aircraft type unavailable":f.type:f.description;
         fit(c,(airlineName.isEmpty()?"":f.title()+"  ·  ")+model,x+26,590,21,w-52,MUTED,regular);
         RouteRepository.Result route=demo||routes==null?null:routes.get(f.callsign,this::invalidate);
