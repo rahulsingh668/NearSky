@@ -1,6 +1,6 @@
 # NearSky for Android TV / Google TV
 
-Developed by **Rahul Singh** · Current version: **1.5.1**
+Developed by **Rahul Singh** · Current version: **1.5.2**
 
 **[Step-by-step how-to guide](docs/HOW_TO.md)** — build from source, install on a TV, configure location and radius, enable the screensaver, customize liveries and troubleshoot.
 
@@ -14,7 +14,7 @@ Cards also show callsign, aircraft model, origin/destination airport codes with 
 
 Version 1.5 adds the real-airline code inventory and 67 illustration drafts. Card names retain the smaller, plain sans-serif style. **[Browse the code list](docs/AIRLINES.md)**, **[open the offline searchable gallery](docs/AIRLINES.html)** or **[see the artwork catalogue](docs/LIVERIES.md)** or **[browse the TV screenshots](docs/SCREENSHOTS.md)** for settings, city presets, sample mode, photos and setup. Earlier settings captures remain from version 1.3.1.
 
-![Live NearSky app with settings gear, blinking LIVE indicator, routes and flight details](docs/screenshots/settings-gear-live.png)
+![Live NearSky app with settings gear, blinking LIVE indicator, routes and flight details](docs/screenshots/country-route-live.png)
 
 | Main menu | Location and radius |
 | --- | --- |
@@ -159,3 +159,9 @@ Airline-name provenance and public brand spellings are recorded in `app/src/main
 The bottom-left gear is a focusable settings button in both the app preview and the actual screensaver. In full-screen preview, press remote OK to open settings; Back and Menu also reopen the panel. In the screensaver, OK on the gear opens the app settings panel, including when the app already has an existing preview activity. Back exits the interactive screensaver.
 
 A small red dot blinks beside **LIVE** while the feed is fresh. It is absent in connecting, delayed and demo states. The distance disclaimer has been removed; the footer credit reads **Developed by Rahul Singh Copyright 2026.**
+
+## Version 1.5.2 — quieter controls and route labels
+
+The bottom-left settings gear is smaller and muted, with no filled tile and a faint focus ring. Its 48 dp input target remains remote- and touch-accessible. The footer uses **Developed by Rahul Singh © 2026.**
+
+Aircraft-card labels show the **airline company country / Domestic or International** instead of an operator/livery-type label. Company country comes from exact ICAO airline metadata, with source-linked offline seeds for all 91 bundled airlines. It is not derived from the aircraft registration or the TV location. A route is domestic when both endpoint airports have the same valid country ISO code, and international when those country codes differ. Missing route/country data shows **Route unknown**; missing company data shows **Country unknown**. Reference routes may be outdated.

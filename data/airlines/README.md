@@ -42,3 +42,7 @@ python3 tools/build-airline-gallery.py
 ```
 
 The snapshots used for this release were retrieved on the date above; later queries will differ. Keep the snapshot date, source hashes and manually verified status exceptions up to date when refreshing. The inventory is documentation/research data; it is not loaded into the TV app as an assertion of current airline identities.
+
+## Offline company-country seeds
+
+`tools/generate-airline-countries.py` builds the app’s `airline-countries.json` from the source-linked bundled rows. `company-country-overrides.json` retains explicit country/territory labels from the CC0 major-airline list, including Cathay Pacific → Hong Kong and SAS → Sweden. Runtime exact-ICAO airline metadata may refresh these seeds. Company country is independent of a flight’s route classification and does not identify the aircraft owner or current position.

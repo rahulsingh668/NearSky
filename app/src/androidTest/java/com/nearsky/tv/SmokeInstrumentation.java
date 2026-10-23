@@ -58,6 +58,7 @@ public final class SmokeInstrumentation extends Instrumentation {
                 check(picture.getWidth()==1200 && picture.getHeight()==440,"SVG parses and renders: "+code);
             }
             String[] assetCodes=getTargetContext().getAssets().list("liveries");
+            AirlineNameRepository companyMetadata=new AirlineNameRepository(getTargetContext());
             int catalogueCount;
             try(java.io.InputStream catalogue=getTargetContext().getAssets().open("livery-catalogue.json")){
                 java.io.ByteArrayOutputStream bytes=new java.io.ByteArrayOutputStream();byte[] buffer=new byte[4096];int n;
@@ -68,6 +69,7 @@ public final class SmokeInstrumentation extends Instrumentation {
             for(String file:assetCodes){
                 String code=file.substring(0,3);
                 check(AirlineLiveries.contains(code)&&!AirlineNames.known(code).isEmpty(),"Bundled airline metadata: "+code);
+                check(!companyMetadata.country(code).isEmpty(),"Offline company country is available: "+code);
                 for(String folder:new String[]{"liveries","wordmarks"})try(java.io.InputStream inputSvg=getTargetContext().getAssets().open(folder+"/"+file)){
                     com.caverock.androidsvg.SVG svg=com.caverock.androidsvg.SVG.getFromInputStream(inputSvg);
                     android.graphics.Picture picture=svg.renderToPicture(1200,440);
@@ -77,6 +79,21 @@ public final class SmokeInstrumentation extends Instrumentation {
                     bitmap.recycle();check(ink>20,"Native AndroidSVG produces visible artwork: "+folder+"/"+code);
                 }
             }
+            companyMetadata.stop();
+            FlightRoute.Airport india=new FlightRoute.Airport(new JSONObject("{\"iata_code\":\"DEL\",\"country_iso_name\":\"IN\",\"country_name\":\"India\"}"));
+            FlightRoute.Airport mumbai=new FlightRoute.Airport(new JSONObject("{\"iata_code\":\"BOM\",\"country_iso_name\":\"in\"}"));
+            FlightRoute.Airport america=new FlightRoute.Airport(new JSONObject("{\"iata_code\":\"JFK\",\"country_iso_name\":\"US\"}"));
+            FlightRoute.Airport missingCountry=new FlightRoute.Airport(new JSONObject("{\"iata_code\":\"DEL\",\"country_name\":\"India\"}"));
+            FlightRoute.Airport invalidCountry=new FlightRoute.Airport(new JSONObject("{\"iata_code\":\"BOM\",\"country_iso_name\":\"ZZ\"}"));
+            check(new FlightRoute(india,mumbai).classification().equals("DOMESTIC"),"Same-country route is domestic, with normalized ISO codes");
+            check(new FlightRoute(india,america).classification().equals("INTERNATIONAL"),"Cross-country route is international");
+            check(new FlightRoute(america,america).classification().equals("DOMESTIC"),"Route classification is independent of airline home country and TV location");
+            check(new FlightRoute(india,missingCountry).classification().equals("ROUTE UNKNOWN"),"Missing airport country is never guessed from airport code or name");
+            check(new FlightRoute(india,invalidCountry).classification().equals("ROUTE UNKNOWN"),"Invalid airport country does not produce a false international label");
+            JSONObject companies=new JSONObject("{\"response\":[{\"icao\":\"AIC\",\"country\":\"India\"},{\"icao\":\"ANA\",\"country\":\"Japan\"}]}");
+            check(AirlineNameRepository.parseCountry("ANA",companies).equals("Japan"),"Company country matches exact operator code");
+            check(AirlineNameRepository.parseCountry("IGO",companies).isEmpty(),"Another airline's country is not substituted");
+            check(AirlineNameRepository.parseCountry("IGO",new JSONObject("{\"response\":[{\"icao\":\"IGO\"}]}")).isEmpty(),"Missing company country remains unknown");
             MainActivity activity=(MainActivity)startActivitySync(new android.content.Intent(getTargetContext(),MainActivity.class)
                 .addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK).putExtra("preview",true).putExtra("demo",true));
             waitForIdleSync();

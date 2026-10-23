@@ -8,14 +8,21 @@ final class FlightRoute {
     final Airport origin,destination;
     FlightRoute(Airport origin,Airport destination){this.origin=origin;this.destination=destination;}
     static final class Airport {
-        final String code,city;
+        final String code,city,countryIso,country;
         Airport(JSONObject value){
             String iata=clean(value,"iata_code").toUpperCase(Locale.US);
             String icao=clean(value,"icao_code").toUpperCase(Locale.US);
             code=iata.matches("[A-Z]{3}")?iata:icao.matches("[A-Z0-9]{4}")?icao:"—";
             String municipality=clean(value,"municipality");
             city=municipality.isEmpty()?clean(value,"name"):municipality;
+            String iso=clean(value,"country_iso_name").toUpperCase(Locale.US);
+            countryIso=java.util.Arrays.asList(Locale.getISOCountries()).contains(iso)?iso:"";
+            country=clean(value,"country_name");
         }
+    }
+    String classification(){
+        if(origin.countryIso.isEmpty()||destination.countryIso.isEmpty())return "ROUTE UNKNOWN";
+        return origin.countryIso.equals(destination.countryIso)?"DOMESTIC":"INTERNATIONAL";
     }
     static String callsign(String value){
         String s=value==null?"":value.trim().toUpperCase(Locale.US);

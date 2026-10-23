@@ -1,0 +1,370 @@
+{
+  "snapshot_date": "2026-10-23",
+  "description": "Company home country/territory, not aircraft location or flight classification. Runtime exact-code metadata may refresh these seeds.",
+  "airlines": {
+    "AAL": {
+      "country": "United States",
+      "source": "https://www.wikidata.org/wiki/Q32396"
+    },
+    "AAR": {
+      "country": "South Korea",
+      "source": "https://www.wikidata.org/wiki/Q211165"
+    },
+    "AAY": {
+      "country": "United States",
+      "source": "https://www.wikidata.org/wiki/Q1319601"
+    },
+    "ACA": {
+      "country": "Canada",
+      "source": "https://www.wikidata.org/wiki/Q185339"
+    },
+    "AEA": {
+      "country": "Spain",
+      "source": "https://www.wikidata.org/wiki/Q332980"
+    },
+    "AEE": {
+      "country": "Greece",
+      "source": "https://www.wikidata.org/wiki/Q380580"
+    },
+    "AFL": {
+      "country": "Russia",
+      "source": "https://www.wikidata.org/wiki/Q58707"
+    },
+    "AFR": {
+      "country": "France",
+      "source": "https://www.wikidata.org/wiki/Q131005"
+    },
+    "AIC": {
+      "country": "India",
+      "source": "https://www.wikidata.org/wiki/Q69906"
+    },
+    "AKJ": {
+      "country": "India",
+      "source": "https://www.wikidata.org/wiki/Q109536115"
+    },
+    "ALK": {
+      "country": "Sri Lanka",
+      "source": "https://www.wikidata.org/wiki/Q853293"
+    },
+    "AMX": {
+      "country": "Mexico",
+      "source": "https://www.wikidata.org/wiki/Q381563"
+    },
+    "ANA": {
+      "country": "Japan",
+      "source": "https://www.wikidata.org/wiki/Q204284"
+    },
+    "ANZ": {
+      "country": "New Zealand",
+      "source": "https://www.wikidata.org/wiki/Q204296"
+    },
+    "ASA": {
+      "country": "United States",
+      "source": "https://www.wikidata.org/wiki/Q822614"
+    },
+    "AUA": {
+      "country": "Austria",
+      "source": "https://www.wikidata.org/wiki/Q781770"
+    },
+    "AVA": {
+      "country": "Colombia",
+      "source": "https://www.wikidata.org/wiki/Q308911"
+    },
+    "AXB": {
+      "country": "India",
+      "source": "https://www.wikidata.org/wiki/Q407343"
+    },
+    "AXM": {
+      "country": "Malaysia",
+      "source": "https://www.wikidata.org/wiki/Q406643"
+    },
+    "AZU": {
+      "country": "Brazil",
+      "source": "https://www.wikidata.org/wiki/Q794272"
+    },
+    "BAW": {
+      "country": "United Kingdom",
+      "source": "https://www.wikidata.org/wiki/Q8766"
+    },
+    "BEL": {
+      "country": "Belgium",
+      "source": "https://www.wikidata.org/wiki/Q153571"
+    },
+    "CCA": {
+      "country": "China",
+      "source": "https://github.com/AviationShop/airline-codes"
+    },
+    "CEB": {
+      "country": "Philippines",
+      "source": "https://www.wikidata.org/wiki/Q995151"
+    },
+    "CES": {
+      "country": "China",
+      "source": "https://github.com/AviationShop/airline-codes"
+    },
+    "CFG": {
+      "country": "Germany",
+      "source": "https://www.wikidata.org/wiki/Q312517"
+    },
+    "CHH": {
+      "country": "China",
+      "source": "https://github.com/AviationShop/airline-codes"
+    },
+    "CMP": {
+      "country": "Panama",
+      "source": "https://www.wikidata.org/wiki/Q849404"
+    },
+    "CPA": {
+      "country": "Hong Kong",
+      "source": "https://github.com/AviationShop/airline-codes"
+    },
+    "CSN": {
+      "country": "China",
+      "source": "https://github.com/AviationShop/airline-codes"
+    },
+    "DAL": {
+      "country": "United States",
+      "source": "https://www.wikidata.org/wiki/Q188920"
+    },
+    "DLH": {
+      "country": "Germany",
+      "source": "https://www.wikidata.org/wiki/Q9325"
+    },
+    "EIN": {
+      "country": "Ireland",
+      "source": "https://www.wikidata.org/wiki/Q83716"
+    },
+    "ELY": {
+      "country": "Israel",
+      "source": "https://www.wikidata.org/wiki/Q208489"
+    },
+    "ETD": {
+      "country": "United Arab Emirates",
+      "source": "https://www.wikidata.org/wiki/Q212304"
+    },
+    "ETH": {
+      "country": "Ethiopia",
+      "source": "https://www.wikidata.org/wiki/Q245233"
+    },
+    "EWG": {
+      "country": "Germany",
+      "source": "https://www.wikidata.org/wiki/Q168836"
+    },
+    "EZY": {
+      "country": "United Kingdom",
+      "source": "https://www.wikidata.org/wiki/Q191551"
+    },
+    "FDB": {
+      "country": "United Arab Emirates",
+      "source": "https://www.wikidata.org/wiki/Q1048495"
+    },
+    "FDX": {
+      "country": "United States",
+      "source": "https://www.wikidata.org/wiki/Q782557"
+    },
+    "FFT": {
+      "country": "United States",
+      "source": "https://www.wikidata.org/wiki/Q1139541"
+    },
+    "FIN": {
+      "country": "Finland",
+      "source": "https://www.wikidata.org/wiki/Q201821"
+    },
+    "FJI": {
+      "country": "Fiji",
+      "source": "https://www.wikidata.org/wiki/Q407719"
+    },
+    "GFA": {
+      "country": "Bahrain",
+      "source": "https://www.wikidata.org/wiki/Q473231"
+    },
+    "GIA": {
+      "country": "Indonesia",
+      "source": "https://www.wikidata.org/wiki/Q512468"
+    },
+    "GLO": {
+      "country": "Brazil",
+      "source": "https://www.wikidata.org/wiki/Q691637"
+    },
+    "HVN": {
+      "country": "Vietnam",
+      "source": "https://www.wikidata.org/wiki/Q174386"
+    },
+    "IBE": {
+      "country": "Spain",
+      "source": "https://www.wikidata.org/wiki/Q187972"
+    },
+    "IGO": {
+      "country": "India",
+      "source": "https://www.wikidata.org/wiki/Q1057110"
+    },
+    "ITY": {
+      "country": "Italy",
+      "source": "https://www.wikidata.org/wiki/Q108251249"
+    },
+    "JAL": {
+      "country": "Japan",
+      "source": "https://www.wikidata.org/wiki/Q213140"
+    },
+    "JBU": {
+      "country": "United States",
+      "source": "https://www.wikidata.org/wiki/Q161086"
+    },
+    "JST": {
+      "country": "Australia",
+      "source": "https://www.wikidata.org/wiki/Q767627"
+    },
+    "KAC": {
+      "country": "Kuwait",
+      "source": "https://www.wikidata.org/wiki/Q860389"
+    },
+    "KAL": {
+      "country": "South Korea",
+      "source": "https://www.wikidata.org/wiki/Q213147"
+    },
+    "KLM": {
+      "country": "Netherlands",
+      "source": "https://www.wikidata.org/wiki/Q181912"
+    },
+    "KQA": {
+      "country": "Kenya",
+      "source": "https://www.wikidata.org/wiki/Q638900"
+    },
+    "LAN": {
+      "country": "Chile",
+      "source": "https://www.wikidata.org/wiki/Q649178"
+    },
+    "LOT": {
+      "country": "Poland",
+      "source": "https://www.wikidata.org/wiki/Q204268"
+    },
+    "MAS": {
+      "country": "Malaysia",
+      "source": "https://www.wikidata.org/wiki/Q308952"
+    },
+    "MEA": {
+      "country": "Lebanon",
+      "source": "https://www.wikidata.org/wiki/Q859510"
+    },
+    "MSR": {
+      "country": "Egypt",
+      "source": "https://www.wikidata.org/wiki/Q374740"
+    },
+    "NAX": {
+      "country": "Norway",
+      "source": "https://www.norwegian.com/"
+    },
+    "OMA": {
+      "country": "Oman",
+      "source": "https://www.wikidata.org/wiki/Q860379"
+    },
+    "PAL": {
+      "country": "Philippines",
+      "source": "https://www.wikidata.org/wiki/Q846910"
+    },
+    "PGT": {
+      "country": "Turkey",
+      "source": "https://www.wikidata.org/wiki/Q1100424"
+    },
+    "QFA": {
+      "country": "Australia",
+      "source": "https://www.wikidata.org/wiki/Q32491"
+    },
+    "QTR": {
+      "country": "Qatar",
+      "source": "https://www.wikidata.org/wiki/Q208033"
+    },
+    "RAM": {
+      "country": "Morocco",
+      "source": "https://www.wikidata.org/wiki/Q866103"
+    },
+    "RJA": {
+      "country": "Jordan",
+      "source": "https://www.wikidata.org/wiki/Q824225"
+    },
+    "RYR": {
+      "country": "Ireland",
+      "source": "https://www.wikidata.org/wiki/Q170614"
+    },
+    "SAA": {
+      "country": "South Africa",
+      "source": "https://www.wikidata.org/wiki/Q223763"
+    },
+    "SAS": {
+      "country": "Sweden",
+      "source": "https://github.com/AviationShop/airline-codes"
+    },
+    "SEJ": {
+      "country": "India",
+      "source": "https://www.wikidata.org/wiki/Q943813"
+    },
+    "SIA": {
+      "country": "Singapore",
+      "source": "https://www.wikidata.org/wiki/Q32245"
+    },
+    "SVA": {
+      "country": "Saudi Arabia",
+      "source": "https://www.wikidata.org/wiki/Q541179"
+    },
+    "SWA": {
+      "country": "United States",
+      "source": "https://www.wikidata.org/wiki/Q503308"
+    },
+    "SWR": {
+      "country": "Switzerland",
+      "source": "https://www.wikidata.org/wiki/Q156776"
+    },
+    "TAP": {
+      "country": "Portugal",
+      "source": "https://www.wikidata.org/wiki/Q208232"
+    },
+    "TGW": {
+      "country": "Singapore",
+      "source": "https://www.wikidata.org/wiki/Q1319404"
+    },
+    "THA": {
+      "country": "Thailand",
+      "source": "https://www.wikidata.org/wiki/Q188710"
+    },
+    "THY": {
+      "country": "Turkey",
+      "source": "https://www.wikidata.org/wiki/Q4548"
+    },
+    "TRA": {
+      "country": "Netherlands",
+      "source": "https://www.wikidata.org/wiki/Q246952"
+    },
+    "UAE": {
+      "country": "United Arab Emirates",
+      "source": "https://www.wikidata.org/wiki/Q180432"
+    },
+    "UAL": {
+      "country": "United States",
+      "source": "https://www.wikidata.org/wiki/Q174769"
+    },
+    "UPS": {
+      "country": "United States",
+      "source": "https://www.wikidata.org/wiki/Q1318737"
+    },
+    "VIR": {
+      "country": "United Kingdom",
+      "source": "https://www.wikidata.org/wiki/Q32277"
+    },
+    "VLG": {
+      "country": "Spain",
+      "source": "https://www.wikidata.org/wiki/Q646741"
+    },
+    "VOI": {
+      "country": "Mexico",
+      "source": "https://www.wikidata.org/wiki/Q431757"
+    },
+    "VOZ": {
+      "country": "Australia",
+      "source": "https://www.wikidata.org/wiki/Q727074"
+    },
+    "WJA": {
+      "country": "Canada",
+      "source": "https://www.wikidata.org/wiki/Q1059770"
+    }
+  }
+}

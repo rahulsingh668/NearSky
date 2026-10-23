@@ -74,3 +74,9 @@ Captured on the TCL TV on 23 October 2026, with its saved New York location and 
 ![Live app with settings gear, LIVE indicator and copyright](screenshots/settings-gear-live.png)
 
 ![Settings panel opened with remote OK](screenshots/settings-gear-panel.png)
+
+## Version 1.5.2 — quiet gear and company-country / route labels
+
+The settings gear is smaller and blended into the background, while remaining remote-focusable. The airline tag now shows the company home country/territory followed by Domestic or International, based on known route airport countries. Unknown metadata stays explicitly unknown. The footer uses the © symbol.
+
+![Smaller settings gear, country and route labels, and © credit](screenshots/country-route-live.png)

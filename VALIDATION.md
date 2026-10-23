@@ -1,3 +1,12 @@
+# Version 1.5.2 validation — 23 October 2026
+
+- `assembleDebug`, `assembleDebugAndroidTest`, `lintDebug` and APK signature verification passed.
+- Installed versionCode 10 / versionName 1.5.2 on the TCL TV, retaining saved location and display preferences.
+- **412 native assertions passed**: all 91 bundled carriers have offline company-country values; all SVGs still render; domestic/international classification compares valid endpoint ISO country codes; missing/invalid codes remain unknown; airline-country responses must match the exact ICAO operator. Remote OK, Back, Menu and existing-activity settings intent checks continue to pass.
+- Company country is independent of flight classification. Foreign-carrier domestic routes remain domestic; route type is never inferred from the TV location, the airline's home country, airport prefix or aircraft registration.
+- Company-country seed coverage exactly matches the 91 bundled artwork identifiers and every seed retains a source URL. Runtime exact-code airline metadata can refresh these values.
+- The visible gear shrank from a 23 dp outline in a filled 44 dp tile to a muted 16 dp outline with no filled tile and a faint focus ring. Its 48 dp interactive target is preserved. Footer uses © 2026.
+
 # Version 1.5.1 validation — 23 October 2026
 
 - `assembleDebug`, `assembleDebugAndroidTest` and `lintDebug` passed. APK signature verified.

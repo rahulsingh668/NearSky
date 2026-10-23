@@ -1,6 +1,6 @@
 # Build, install and use NearSky
 
-NearSky is a native Android TV / Google TV screensaver. Version 1.5.1 shows the three nearest airborne aircraft across a horizontal TV, with SVG airline illustrations, airline names, flight details, and reference origin/destination routes. The bottom-right credit reads **Developed by Rahul Singh Copyright 2026.**.
+NearSky is a native Android TV / Google TV screensaver. Version 1.5.2 shows the three nearest airborne aircraft across a horizontal TV, with SVG airline illustrations, airline names, flight details, and reference origin/destination routes. The bottom-right credit reads **Developed by Rahul Singh © 2026.**.
 
 See the [screenshot gallery](SCREENSHOTS.md) for the live display, menus and settings on a real TCL TV.
 
@@ -141,3 +141,5 @@ Selected coordinates are sent to adsb.fi. Callsigns, aircraft hex identifiers an
 Open `docs/AIRLINES.html` locally for searchable ICAO/IATA codes, names, country and artwork status. GitHub-readable listing: [AIRLINES.md](AIRLINES.md). Source data, operating-status limitations and refresh instructions: [data/airlines/README.md](../data/airlines/README.md). The 67 new drafts are not exact brand reproductions. Operating airlines have priority; unknown status requires verification.
 
 The additional real-code-only export contains the 91 bundled SVGs and their catalogue, without unused AAA–ZZZ placeholders. Rebuild it with `python3 tools/build-airline-gallery.py` after regenerating artwork and the inventory. The legacy full-identifier export remains available separately.
+
+Company-country labels use `app/src/main/assets/airline-countries.json` as an offline seed and exact-ICAO airline API results for refreshes. Rebuild the seed with `python3 tools/generate-airline-countries.py`. Classification uses route airport `country_iso_name` values; missing or invalid values remain unknown, without airport-prefix, registration or TV-location guesses. The small muted gear retains its full click target.

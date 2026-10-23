@@ -1,0 +1,8 @@
+{
+  "CPA": {"country":"Hong Kong","source":"https://github.com/AviationShop/airline-codes"},
+  "SAS": {"country":"Sweden","source":"https://github.com/AviationShop/airline-codes"},
+  "CCA": {"country":"China","source":"https://github.com/AviationShop/airline-codes"},
+  "CES": {"country":"China","source":"https://github.com/AviationShop/airline-codes"},
+  "CSN": {"country":"China","source":"https://github.com/AviationShop/airline-codes"},
+  "CHH": {"country":"China","source":"https://github.com/AviationShop/airline-codes"}
+}

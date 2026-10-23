@@ -81,7 +81,7 @@ public final class FlightView extends View {
             }else drawEmpty(c,i,left,received==0&&error==null?"Listening to the sky":error!=null||expired?"Waiting for fresh positions":"No more aircraft in range");
         }
         text(c,"POSITION DATA  adsb.fi  ·  15 SEC REFRESH",148,1008,18,MUTED,regular);
-        textRight(c,"Developed by Rahul Singh Copyright 2026.",1856,1008,17,MUTED,regular);
+        textRight(c,"Developed by Rahul Singh © 2026.",1856,1008,17,MUTED,regular);
         if(demo||error!=null)text(c,demo?"Sample positions · return to Live from the menu":"Connection interrupted · fresh positions only",148,1040,16,MUTED,regular);
         setContentDescription(accessibility.toString());c.restore();
     }
@@ -91,6 +91,8 @@ public final class FlightView extends View {
         PhotoRepository.Photo photo=photos!=null?photos.get(f.hex,settings.photos,this::invalidate):null;
         if(code.isEmpty()&&photo!=null)code=photo.operator;
         String airlineName=airlineNames!=null?airlineNames.get(code,this::invalidate):AirlineNames.known(code);
+        String airlineCountry=airlineNames==null?"":airlineNames.country(code);
+        RouteRepository.Result route=demo||routes==null?null:routes.get(f.callsign,this::invalidate);
         String brandColor=AirlineLiveries.primary(code);
         int accent=Color.parseColor(brandColor==null?LiveryDesign.primary(code):brandColor);
         round(c,x,top,x+w,bottom,24,Color.rgb(21,32,41));
@@ -107,14 +109,16 @@ public final class FlightView extends View {
         }
         round(c,x+24,246,x+175,284,9,Color.argb(225,8,19,26));
         text(c,rank==0?"01  NEAREST":String.format(Locale.US,"%02d  NEARBY",rank+1),x+38,272,17,MINT,bold);
-        textRight(c,code.isEmpty()?"UNIDENTIFIED OPERATOR":code+(isPhoto?"  /  REFERENCE PHOTO":AirlineLiveries.contains(code)?"  /  STANDARD LIVERY":"  /  CONCEPT LIVERY"),x+w-24,475,14,Color.rgb(204,218,225),regular);
+        String countryLabel=airlineCountry.isEmpty()?"COUNTRY UNKNOWN":airlineCountry.toUpperCase(Locale.US);
+        String routeLabel=route==null||route.route==null?"ROUTE UNKNOWN":route.route.classification();
+        p.setTextSize(14);p.setTypeface(regular);String tag=countryLabel+"  /  "+routeLabel;
+        fit(c,tag,x+w-24-Math.min(w-48,p.measureText(tag)),475,14,w-48,Color.rgb(204,218,225),regular);
         if(isPhoto)textRight(c,"Photo: Airport-data.com via adsbdb",x+w-24,456,12,INK,regular);
         c.restore();
         p.setColor(accent);c.drawRect(x+24,511,x+28,549,p);
         fit(c,airlineName.isEmpty()?f.title():airlineName,x+43,544,38,w-70,INK,regular);
         String model=photo!=null&&!photo.aircraft.isEmpty()?photo.aircraft:f.description.isEmpty()?f.type.isEmpty()?"Aircraft type unavailable":f.type:f.description;
         fit(c,(airlineName.isEmpty()?"":f.title()+"  ·  ")+model,x+26,590,21,w-52,MUTED,regular);
-        RouteRepository.Result route=demo||routes==null?null:routes.get(f.callsign,this::invalidate);
         drawRoute(c,x,route);
         double distance=Geo.distanceKm(settings.lat,settings.lon,f.lat,f.lon);
         text(c,String.format(Locale.US,"%.1f",distance),x+24,735,54,MINT,mono);
