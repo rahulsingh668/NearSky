@@ -1,10 +1,10 @@
 # NearSky for Android TV / Google TV
 
-Developed by **Rahul Singh** · Current version: **1.5.2**
+Developed by **Rahul Singh** · Current version: **1.5.3**
 
 **[Step-by-step how-to guide](docs/HOW_TO.md)** — build from source, install on a TV, configure location and radius, enable the screensaver, customize liveries and troubleshoot.
 
-A native Android screensaver showing up to three nearby airborne aircraft in three large cards across the full width of a horizontal TV. Defaults to **Ghaziabad (28.6692, 77.4538), within 50 km**. Android 8.0 or newer. No account, GPS permission, API key, backend or subscription required for the current personal-use data sources.
+A native Android screensaver showing up to three nearby airborne aircraft with complete display information in three large cards across the full width of a horizontal TV. Defaults to **Ghaziabad (28.6692, 77.4538), within 50 km**. Android 8.0 or newer. No account, GPS permission, API key, backend or subscription required for the current personal-use data sources.
 
 Each card shows a detailed SVG aircraft illustration with enlarged airline lettering on the aircraft and a smaller, plain sans-serif airline name below the image. **91 airlines have bundled illustrations: 24 existing schemes and 67 new review drafts**, including the approved IndiGo design, Air India, SpiceJet, Akasa Air, Air India Express, the major international carriers listed in the [livery catalogue](docs/LIVERIES.md), and UPS/FedEx cargo carriers. Other operator codes keep a labeled concept design. These are representative airline illustrations on a shared airliner silhouette, not exact fleet/type drawings or a guarantee of the paint currently on the reported aircraft. English wordmarks and simplified tail motifs are approximations, not official brand master assets.
 
@@ -14,7 +14,7 @@ Cards also show callsign, aircraft model, origin/destination airport codes with 
 
 Version 1.5 adds the real-airline code inventory and 67 illustration drafts. Card names retain the smaller, plain sans-serif style. **[Browse the code list](docs/AIRLINES.md)**, **[open the offline searchable gallery](docs/AIRLINES.html)** or **[see the artwork catalogue](docs/LIVERIES.md)** or **[browse the TV screenshots](docs/SCREENSHOTS.md)** for settings, city presets, sample mode, photos and setup. Earlier settings captures remain from version 1.3.1.
 
-![Live NearSky app with settings gear, blinking LIVE indicator, routes and flight details](docs/screenshots/country-route-live.png)
+![Live NearSky app with settings gear, blinking LIVE indicator, routes and flight details](docs/screenshots/complete-flights-live.png)
 
 | Main menu | Location and radius |
 | --- | --- |
@@ -165,3 +165,11 @@ A small red dot blinks beside **LIVE** while the feed is fresh. It is absent in 
 The bottom-left settings gear is smaller and muted, with no filled tile and a faint focus ring. Its 48 dp input target remains remote- and touch-accessible. The footer uses **Developed by Rahul Singh © 2026.**
 
 Aircraft-card labels show the **airline company country / Domestic or International** instead of an operator/livery-type label. Company country comes from exact ICAO airline metadata, with source-linked offline seeds for all 91 bundled airlines. It is not derived from the aircraft registration or the TV location. A route is domestic when both endpoint airports have the same valid country ISO code, and international when those country codes differ. Missing route/country data shows **Route unknown**; missing company data shows **Country unknown**. Reference routes may be outdated.
+
+## Version 1.5.3 — hide incomplete live flights
+
+Live cards now require an identified airline and company country, a callsign, aircraft model/type and registration, finite altitude/speed/heading, and a callsign-matched route with both airport codes/city names and valid countries for Domestic/International classification. Unknown or unavailable fields are not filled with guesses.
+
+Filtering happens before the three-card limit: the next-nearest complete flight fills each slot. Pending metadata is resolved in the background; cached complete flights can remain visible while nearer candidates are checked. If fewer than three complete flights are available, remaining slots say that details are being checked or no more complete flights are available. Incomplete flights are never used as filler. Sample mode remains clearly labeled and retains its illustrative sample positions and explicit route-unavailable explanation.
+
+Enrichment scans allow at most six pending candidates before using cache-only checks for farther aircraft. Route requests stay deduplicated with bounded caches and negative caching. Feed freshness, location and radius rules remain in force.

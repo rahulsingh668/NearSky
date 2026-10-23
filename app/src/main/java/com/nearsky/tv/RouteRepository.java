@@ -23,6 +23,12 @@ final class RouteRepository {
     private final ExecutorService worker=Executors.newSingleThreadExecutor();
     private final Handler main=new Handler(Looper.getMainLooper());
     private volatile boolean stopped;
+    Result peek(String callsign){
+        String key=FlightRoute.callsign(callsign);
+        Entry entry=cache.get(key);
+        if(entry!=null&&SystemClock.elapsedRealtime()<entry.expires)return entry.result;
+        return pending.contains(key)?LOADING:UNAVAILABLE;
+    }
     Result get(String callsign,Runnable changed){
         String key=FlightRoute.callsign(callsign);
         if(key.isEmpty()||stopped)return UNAVAILABLE;
@@ -37,7 +43,7 @@ final class RouteRepository {
             main.post(()->{
                 if(stopped)return;
                 pending.remove(key);cache.put(key,new Entry(result,SystemClock.elapsedRealtime()));
-                while(cache.size()>64)cache.remove(cache.keySet().iterator().next());
+                while(cache.size()>256)cache.remove(cache.keySet().iterator().next());
                 changed.run();
             });
         });

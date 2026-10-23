@@ -16,6 +16,7 @@ final class AirlineNameRepository {
     private final Map<String,String> names=new HashMap<>();
     private final Map<String,String> countries=new HashMap<>();
     private final Map<String,Long> attempted=new HashMap<>();
+    private final Set<String> pending=new HashSet<>();
     private final ExecutorService executor=Executors.newSingleThreadExecutor();
     private final Handler main=new Handler(Looper.getMainLooper());
     private volatile boolean stopped;
@@ -39,12 +40,14 @@ final class AirlineNameRepository {
         long saved=prefs.getLong(code+".at",0);
         if(!stopped&&!attempted.containsKey(code)&&(saved==0||now-saved>86400000L||now<saved||country(code).isEmpty())){
             attempted.put(code,now);
+            pending.add(code);
             executor.execute(()->{
                 String resolved="",resolvedCountry="";
                 try{JSONObject response=Network.json("https://api.adsbdb.com/v0/airline/"+code);resolved=parse(code,response);resolvedCountry=parseCountry(code,response);}catch(Exception ignored){/* Offline names remain available. */}
                 String result=resolved,resultCountry=resolvedCountry;
                 main.post(()->{
                     if(stopped)return;
+                    pending.remove(code);
                     if(!result.isEmpty()||!resultCountry.isEmpty()){
                         if(names.size()>96)names.clear();
                         if(!result.isEmpty())names.put(code,result);
@@ -61,6 +64,11 @@ final class AirlineNameRepository {
         }
         return names.getOrDefault(code,AirlineNames.known(code));
     }
+    String peek(String operator){
+        String code=LiveryDesign.normalized(operator);
+        return names.getOrDefault(code,AirlineNames.display(code,prefs.getString(code,AirlineNames.known(code))));
+    }
+    boolean loading(String operator){return pending.contains(LiveryDesign.normalized(operator));}
     static String parse(String code,JSONObject root){
         JSONObject airline=record(code,root);
         return airline==null?"":AirlineNames.display(code,airline.optString("name",""));
@@ -78,5 +86,5 @@ final class AirlineNameRepository {
         }
         return null;
     }
-    void stop(){stopped=true;executor.shutdownNow();main.removeCallbacksAndMessages(null);}
+    void stop(){stopped=true;executor.shutdownNow();main.removeCallbacksAndMessages(null);pending.clear();}
 }

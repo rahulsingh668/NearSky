@@ -80,3 +80,9 @@ Captured on the TCL TV on 23 October 2026, with its saved New York location and 
 The settings gear is smaller and blended into the background, while remaining remote-focusable. The airline tag now shows the company home country/territory followed by Domestic or International, based on known route airport countries. Unknown metadata stays explicitly unknown. The footer uses the © symbol.
 
 ![Smaller settings gear, country and route labels, and © credit](screenshots/country-route-live.png)
+
+## Version 1.5.3 — complete live flights only
+
+Live mode skips flights with missing airline/company-country, model/type, registration, flight metrics, route endpoint details or classification. The three nearest complete flights fill the cards; fewer eligible flights leaves clearly explained empty slots. Captured from the Android 9 TV’s system screensaver.
+
+![Complete-flight filtering in the live screensaver](screenshots/complete-flights-live.png)

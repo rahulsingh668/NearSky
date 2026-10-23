@@ -20,6 +20,11 @@ public final class Geo {
         return new String[]{"N", "NE", "E", "SE", "S", "SW", "W", "NW"}[(int)Math.round(bearing / 45) % 8];
     }
     public static List<Flight> nearest(List<Flight> source, double lat, double lon, double radiusKm, double elapsedSeconds) {
+        List<Flight> valid=inRange(source,lat,lon,radiusKm,elapsedSeconds);
+        return new ArrayList<>(valid.subList(0,Math.min(3,valid.size())));
+    }
+    /** All fresh candidates, ordered before metadata eligibility is applied. */
+    public static List<Flight> inRange(List<Flight> source, double lat, double lon, double radiusKm, double elapsedSeconds) {
         if (!valid(lat, lon) || !Double.isFinite(radiusKm) || radiusKm <= 0) throw new IllegalArgumentException("Invalid search area");
         List<Flight> valid = new ArrayList<>();
         Set<String> seen = new HashSet<>();
@@ -31,6 +36,6 @@ public final class Geo {
             valid.add(f);
         }
         valid.sort(Comparator.comparingDouble((Flight f) -> distanceKm(lat, lon, f.lat, f.lon)).thenComparing(f -> f.hex));
-        return new ArrayList<>(valid.subList(0, Math.min(3, valid.size())));
+        return valid;
     }
 }

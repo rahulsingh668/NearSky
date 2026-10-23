@@ -20,12 +20,12 @@ public final class FlightView extends View {
     private RouteRepository routes;
     private List<Flight> all=Collections.emptyList();
     private long received;
-    private boolean running,demo;
+    private boolean running,demo,resolvingDetails;
     private String error;
     private final Runnable tick=new Runnable(){@Override public void run(){if(running){invalidate();postDelayed(this,500);}}};
     public FlightView(Context c){super(c);liveries=new LiveryCache(c.getAssets());setImportantForAccessibility(IMPORTANT_FOR_ACCESSIBILITY_YES);}
     public void start(boolean demo){
-        stop();this.demo=demo;running=true;settings=Settings.load(getContext());
+        stop();this.demo=demo;running=true;resolvingDetails=false;settings=Settings.load(getContext());
         photos=new PhotoRepository();routes=new RouteRepository();airlineNames=new AirlineNameRepository(getContext());all=Collections.emptyList();received=0;error=null;
         if(demo){
             all=Arrays.asList(
@@ -48,7 +48,24 @@ public final class FlightView extends View {
         }
         return urls;
     }
-    private List<Flight> nearest(){return settings==null?Collections.emptyList():Geo.nearest(all,settings.lat,settings.lon,settings.radiusKm,demo?0:Math.max(0,(SystemClock.elapsedRealtime()-received)/1000.0));}
+    private List<Flight> nearest(){
+        if(settings==null)return Collections.emptyList();
+        if(demo)return Geo.nearest(all,settings.lat,settings.lon,settings.radiusKm,0);
+        List<Flight> candidates=Geo.inRange(all,settings.lat,settings.lon,settings.radiusKm,Math.max(0,(SystemClock.elapsedRealtime()-received)/1000.0));
+        FlightSelection.Result selection=FlightSelection.select(candidates,this::resolveDetails);
+        resolvingDetails=selection.pending;return selection.flights;
+    }
+    private FlightSelection.State resolveDetails(Flight f,boolean allowLookup){
+        if(!FlightSelection.baseComplete(f)||airlineNames==null||routes==null)return FlightSelection.State.UNAVAILABLE;
+        String code=LiveryDesign.fromCallsign(f.callsign);
+        String airline=allowLookup?airlineNames.get(code,this::invalidate):airlineNames.peek(code);
+        String country=airlineNames.country(code);
+        if(!FlightSelection.known(airline)||!FlightSelection.known(country)||airline.equalsIgnoreCase(code))
+            return airlineNames.loading(code)?FlightSelection.State.PENDING:FlightSelection.State.UNAVAILABLE;
+        RouteRepository.Result route=allowLookup?routes.get(f.callsign,this::invalidate):routes.peek(f.callsign);
+        if(FlightSelection.complete(f,airline,country,route.route))return FlightSelection.State.COMPLETE;
+        return route.loading?FlightSelection.State.PENDING:FlightSelection.State.UNAVAILABLE;
+    }
     @Override protected void onDraw(Canvas c){
         super.onDraw(c);c.drawColor(BG);if(settings==null)return;
         float s=Math.min(getWidth()/1920f,getHeight()/1080f);
@@ -78,7 +95,7 @@ public final class FlightView extends View {
                 Flight f=visible.get(i);drawFlight(c,f,i,left);
                 accessibility.append(f.title()).append(", ").append(number(Geo.distanceKm(settings.lat,settings.lon,f.lat,f.lon),"kilometers away")).append(", altitude ").append(number(f.altitudeFt,"feet")).append(", ground speed ").append(number(f.speedKnots*1.852,"kilometers per hour")).append(". ");
                 if(!demo&&routes!=null){RouteRepository.Result r=routes.get(f.callsign,this::invalidate);if(r.route!=null)accessibility.append("From ").append(r.route.origin.city).append(" ").append(r.route.origin.code).append(" to ").append(r.route.destination.city).append(" ").append(r.route.destination.code).append(". ");}
-            }else drawEmpty(c,i,left,received==0&&error==null?"Listening to the sky":error!=null||expired?"Waiting for fresh positions":"No more aircraft in range");
+            }else drawEmpty(c,i,left,received==0&&error==null?"Listening to the sky":error!=null||expired?"Waiting for fresh positions":resolvingDetails?"Checking flight details":"No more complete flights");
         }
         text(c,"POSITION DATA  adsb.fi  ·  15 SEC REFRESH",148,1008,18,MUTED,regular);
         textRight(c,"Developed by Rahul Singh © 2026.",1856,1008,17,MUTED,regular);
@@ -117,7 +134,7 @@ public final class FlightView extends View {
         c.restore();
         p.setColor(accent);c.drawRect(x+24,511,x+28,549,p);
         fit(c,airlineName.isEmpty()?f.title():airlineName,x+43,544,38,w-70,INK,regular);
-        String model=photo!=null&&!photo.aircraft.isEmpty()?photo.aircraft:f.description.isEmpty()?f.type.isEmpty()?"Aircraft type unavailable":f.type:f.description;
+        String model=FlightSelection.model(f,photo==null?"":photo.aircraft);
         fit(c,(airlineName.isEmpty()?"":f.title()+"  ·  ")+model,x+26,590,21,w-52,MUTED,regular);
         drawRoute(c,x,route);
         double distance=Geo.distanceKm(settings.lat,settings.lon,f.lat,f.lon);
@@ -152,7 +169,7 @@ public final class FlightView extends View {
         c.drawCircle(x+288,460,95,p);c.drawCircle(x+288,460,130,p);c.drawLine(x+130,460,x+446,460,p);c.drawLine(x+288,303,x+288,617,p);p.setStyle(Paint.Style.FILL);
         centered(c,"+",x+288,471,32,MINT,mono);
         fit(c,message,x+28,698,28,520,INK,regular);
-        text(c,"Fresh airborne positions appear here",x+28,742,20,MUTED,regular);
+        text(c,demo?"Fresh airborne positions appear here":"Flights with missing details are hidden",x+28,742,20,MUTED,regular);
         text(c,"Your selected radius stays in effect",x+28,776,18,MUTED,regular);
     }
     private static String number(double n,String unit){return Double.isFinite(n)?String.format(Locale.US,"%,.0f %s",n,unit):"—";}

@@ -1,3 +1,12 @@
+# Version 1.5.3 validation — 23 October 2026
+
+- Build, test APK build, lint and APK signature verification passed.
+- Installed versionCode 11 / versionName 1.5.3 on the Android 9 TV. **426 native assertions passed**. Saved location, radius and screensaver selection are retained. The system DreamManager confirms NearSky is running as a non-test, bound screensaver; its live screenshot shows three complete flights. The second TV was unreachable during this update.
+- Regression checks cover selecting the fourth-nearest complete flight when the nearest flight is unavailable; hiding pending flights while using complete ones behind them; restoring nearest-first ordering after resolution; limiting new lookups after six pending candidates while still using farther cached complete flights; and leaving an empty result when all candidates are incomplete.
+- Completeness checks cover airline name and company country, model/type, registration and finite live metrics, known endpoint codes and city names, and valid route-country classification. Placeholder values do not count as known information.
+- Live selection considers all fresh, unique airborne positions inside the selected radius before applying the three-card cap. Metadata lookup happens before rendering, with deduplicated requests and bounded positive/negative route caching. No route or country is inferred to fill a slot.
+- Explicitly labeled sample mode retains the previous demo behavior and is exempt from the live metadata gate.
+
 # Version 1.5.2 validation — 23 October 2026
 
 - `assembleDebug`, `assembleDebugAndroidTest`, `lintDebug` and APK signature verification passed.
