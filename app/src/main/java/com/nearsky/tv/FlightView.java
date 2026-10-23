@@ -22,7 +22,7 @@ public final class FlightView extends View {
     private long received;
     private boolean running,demo;
     private String error;
-    private final Runnable tick=new Runnable(){@Override public void run(){if(running){invalidate();postDelayed(this,1000);}}};
+    private final Runnable tick=new Runnable(){@Override public void run(){if(running){invalidate();postDelayed(this,500);}}};
     public FlightView(Context c){super(c);liveries=new LiveryCache(c.getAssets());setImportantForAccessibility(IMPORTANT_FOR_ACCESSIBILITY_YES);}
     public void start(boolean demo){
         stop();this.demo=demo;running=true;settings=Settings.load(getContext());
@@ -65,7 +65,12 @@ public final class FlightView extends View {
         boolean expired=received!=0&&SystemClock.elapsedRealtime()-received>60000;
         String status=demo?"DEMO · SAMPLE FLIGHTS":error!=null||expired?"FEED DELAYED":received==0?"CONNECTING":"LIVE";
         int stateColor=demo||error!=null||expired?Color.rgb(236,192,124):MINT;
-        List<Flight> visible=nearest();textRight(c,status+String.format(Locale.US,"  /  %02d IN VIEW",visible.size()),1856,184,19,stateColor,bold);
+        List<Flight> visible=nearest();String statusLabel=status+String.format(Locale.US,"  /  %02d IN VIEW",visible.size());
+        textRight(c,statusLabel,1856,184,19,stateColor,bold);
+        if(status.equals("LIVE")){
+            p.setTypeface(bold);p.setTextSize(19);float dotX=1856-p.measureText(statusLabel)-18;
+            p.setColor(Color.rgb(239,65,72));p.setAlpha(SystemClock.elapsedRealtime()%1000<500?255:55);c.drawCircle(dotX,177,5,p);p.setAlpha(255);
+        }
         StringBuilder accessibility=new StringBuilder(settings.name+". "+status+". ");
         for(int i=0;i<3;i++){
             float left=64+i*608;
@@ -75,9 +80,9 @@ public final class FlightView extends View {
                 if(!demo&&routes!=null){RouteRepository.Result r=routes.get(f.callsign,this::invalidate);if(r.route!=null)accessibility.append("From ").append(r.route.origin.city).append(" ").append(r.route.origin.code).append(" to ").append(r.route.destination.city).append(" ").append(r.route.destination.code).append(". ");}
             }else drawEmpty(c,i,left,received==0&&error==null?"Listening to the sky":error!=null||expired?"Waiting for fresh positions":"No more aircraft in range");
         }
-        text(c,"POSITION DATA  adsb.fi  ·  15 SEC REFRESH",64,1008,18,MUTED,regular);
-        textRight(c,"Developed by Rahul Singh",1856,1008,17,MUTED,regular);
-        text(c,demo?"Sample positions · return to Live from the menu":error!=null?"Connection interrupted · fresh positions only":"Distance from your location · not a navigation tool",64,1040,16,MUTED,regular);
+        text(c,"POSITION DATA  adsb.fi  ·  15 SEC REFRESH",148,1008,18,MUTED,regular);
+        textRight(c,"Developed by Rahul Singh Copyright 2026.",1856,1008,17,MUTED,regular);
+        if(demo||error!=null)text(c,demo?"Sample positions · return to Live from the menu":"Connection interrupted · fresh positions only",148,1040,16,MUTED,regular);
         setContentDescription(accessibility.toString());c.restore();
     }
     private void drawFlight(Canvas c,Flight f,int rank,float x){

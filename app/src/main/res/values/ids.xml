@@ -1,0 +1,4 @@
+<resources>
+    <item name="open_settings" type="id" />
+    <item name="settings_panel" type="id" />
+</resources>

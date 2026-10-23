@@ -15,6 +15,7 @@ public final class MainActivity extends Activity {
     private LinearLayout controls;
     private boolean demo, resumed;
     private Button demoButton;
+    private SettingsButton settingsButton;
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
         demo = state == null ? getIntent().getBooleanExtra("demo", false) : state.getBoolean("demo");
@@ -22,19 +23,28 @@ public final class MainActivity extends Activity {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         FrameLayout root = new FrameLayout(this);
         display = new FlightView(this); root.addView(display, new FrameLayout.LayoutParams(-1, -1));
-        controls = new LinearLayout(this); controls.setOrientation(LinearLayout.VERTICAL); controls.setPadding(dp(24), dp(20), dp(24), dp(20)); controls.setBackgroundColor(Color.rgb(13,22,29));
+        settingsButton=SettingsButton.attach(root,this::showControls);
+        controls = new LinearLayout(this); controls.setId(R.id.settings_panel); controls.setOrientation(LinearLayout.VERTICAL); controls.setPadding(dp(24), dp(20), dp(24), dp(20)); controls.setBackgroundColor(Color.rgb(13,22,29));
         TextView title = new TextView(this); title.setText("NEARSKY"); title.setTextSize(20); title.setTextColor(Color.rgb(196,229,201)); controls.addView(title);
         TextView hint = new TextView(this); hint.setText("Your nearby sky.\nThree aircraft, live."); hint.setTextSize(14); hint.setPadding(0,dp(8),0,dp(18)); controls.addView(hint);
-        button("Full-screen preview", () -> { controls.setVisibility(View.GONE); display.requestFocus(); });
+        button("Full-screen preview", this::showPreview);
         button("Location & radius", this::showLocation);
         demoButton = button(demo ? "Switch to live" : "Try sample flights", () -> { demo = !demo; demoButton.setText(demo ? "Switch to live" : "Try sample flights"); display.start(demo); });
         button("Set as screensaver", this::openScreensaverSettings);
         button("Sources & photo credits", this::showSources);
-        TextView back = new TextView(this); back.setText("Back opens this menu\nin full-screen preview."); back.setTextSize(12); back.setPadding(0,dp(16),0,0); controls.addView(back);
+        TextView back = new TextView(this); back.setText("Use the settings icon, OK, Back\nor Menu to open this panel."); back.setTextSize(12); back.setPadding(0,dp(16),0,0); controls.addView(back);
         FrameLayout.LayoutParams menuParams = new FrameLayout.LayoutParams(dp(320), -2, Gravity.CENTER);
         root.addView(controls, menuParams); setContentView(root);
-        if (getIntent().getBooleanExtra("preview", false)) controls.setVisibility(View.GONE);
+        if (getIntent().getBooleanExtra("preview", false)&&!getIntent().getBooleanExtra("open_settings",false)) showPreview(); else showControls();
     }
+    @Override protected void onNewIntent(Intent intent){
+        super.onNewIntent(intent);setIntent(intent);
+        if(intent.getBooleanExtra("open_settings",false)){
+            demo=false;demoButton.setText("Try sample flights");if(resumed)display.start(false);showControls();
+        }
+    }
+    private void showControls(){controls.setVisibility(View.VISIBLE);settingsButton.setVisibility(View.GONE);controls.getChildAt(2).requestFocus();}
+    private void showPreview(){controls.setVisibility(View.GONE);settingsButton.setVisibility(View.VISIBLE);settingsButton.requestFocus();}
     private int dp(int n) { return Math.round(n * getResources().getDisplayMetrics().density); }
     private Button button(String label, Runnable action) {
         Button b = new Button(this); b.setText(label); b.setTextSize(13); b.setAllCaps(false);
@@ -45,8 +55,8 @@ public final class MainActivity extends Activity {
     @Override protected void onPause() { resumed = false; display.stop(); super.onPause(); }
     @Override protected void onSaveInstanceState(Bundle state) { state.putBoolean("demo", demo); super.onSaveInstanceState(state); }
     @Override public boolean onKeyDown(int code, KeyEvent event) {
-        if (code == KeyEvent.KEYCODE_BACK && controls.getVisibility() != View.VISIBLE) { controls.setVisibility(View.VISIBLE); controls.getChildAt(2).requestFocus(); return true; }
-        if (code == KeyEvent.KEYCODE_MENU) { showLocation(); return true; }
+        if (code == KeyEvent.KEYCODE_BACK && controls.getVisibility() != View.VISIBLE) { showControls(); return true; }
+        if (code == KeyEvent.KEYCODE_MENU) { showControls(); return true; }
         return super.onKeyDown(code, event);
     }
     private EditText field(LinearLayout form, String label, String value, boolean numeric) {

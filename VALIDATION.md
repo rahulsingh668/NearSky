@@ -1,3 +1,11 @@
+# Version 1.5.1 validation — 23 October 2026
+
+- `assembleDebug`, `assembleDebugAndroidTest` and `lintDebug` passed. APK signature verified.
+- Installed versionCode 9 / versionName 1.5.1 on the TCL TV; saved New York location, radius and display preferences retained.
+- **313 native assertions passed**, including remote OK opening the settings panel from full-screen preview, returning to preview, Back reopening settings, Menu reopening settings, and a settings intent reopening an existing activity. Existing data and all 182 SVG rendering checks still pass.
+- Eight physical-TV LIVE screenshots show the red indicator alternating bright and dim; header red-pixel counts: 76, 0, 0, 78, 76, 0, 76, 76. Screenshot inspection confirms the bottom-left gear and exact updated copyright text, without the removed distance disclaimer.
+- The actual DreamService now uses the same focusable settings control and interactive input. Its intent reopens the app panel, exits the dream and resets to live mode. The existing-component intent logic is covered by instrumentation. The TCL's Somnambulator shortcut did not activate a dream during this run, so the DreamService handoff itself was not observed in a running system dream. Its saved component and enabled setting remain unchanged.
+
 # Version 1.5.0 validation — 22 October 2026
 
 - `assembleDebug`, `assembleDebugAndroidTest`, and `lintDebug` passed.

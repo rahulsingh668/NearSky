@@ -1,6 +1,6 @@
 # NearSky for Android TV / Google TV
 
-Developed by **Rahul Singh** · Current version: **1.5.0**
+Developed by **Rahul Singh** · Current version: **1.5.1**
 
 **[Step-by-step how-to guide](docs/HOW_TO.md)** — build from source, install on a TV, configure location and radius, enable the screensaver, customize liveries and troubleshoot.
 
@@ -14,7 +14,7 @@ Cards also show callsign, aircraft model, origin/destination airport codes with 
 
 Version 1.5 adds the real-airline code inventory and 67 illustration drafts. Card names retain the smaller, plain sans-serif style. **[Browse the code list](docs/AIRLINES.md)**, **[open the offline searchable gallery](docs/AIRLINES.html)** or **[see the artwork catalogue](docs/LIVERIES.md)** or **[browse the TV screenshots](docs/SCREENSHOTS.md)** for settings, city presets, sample mode, photos and setup. Earlier settings captures remain from version 1.3.1.
 
-![Live NearSky screensaver showing three nearby flights, original liveries, reference routes and flight details](docs/screenshots/standard-liveries-live.png)
+![Live NearSky app with settings gear, blinking LIVE indicator, routes and flight details](docs/screenshots/settings-gear-live.png)
 
 | Main menu | Location and radius |
 | --- | --- |
@@ -47,10 +47,10 @@ Older TVs may use `adb connect TV_IP:5555` without `adb pair`. Use the address/p
 1. Open **NearSky** from the TV's apps list.
 2. Select **Location & radius**. Choose a city preset or enter a display name and coordinates. A display name alone does not look up a location. You can use your home's map-pin coordinates for greater accuracy than the default city center.
 3. Leave the radius at 50 km or change it between 1 and 200 km. Save.
-4. Select **Full-screen preview**. Press Back to return to the menu.
+4. Select **Full-screen preview**. Use the bottom-left settings gear and press **OK** to reopen the panel. Back and Menu also open it.
 5. **Try sample flights** demonstrates the three-card layout. A prominent DEMO label remains visible. Sample mode only applies to the app preview; the actual screensaver always uses live positions.
 
-The remote's directional pad and OK navigate settings. Menu opens location settings. Custom SVG liveries are the default. Turn on **Prefer photos instead of custom SVG liveries** only if you want reference photos. Version 1.1 starts with SVG mode on upgrade as well; the saved location and radius remain unchanged. The setup menu opens as a centered overlay. Full-screen preview and the screensaver use the entire landscape display without that menu.
+The remote's directional pad and OK navigate settings. Menu opens the settings panel. Custom SVG liveries are the default. Turn on **Prefer photos instead of custom SVG liveries** only if you want reference photos. Version 1.1 starts with SVG mode on upgrade as well; the saved location and radius remain unchanged. The setup menu opens as a centered overlay. Full-screen preview and the screensaver use the entire landscape display without that menu.
 
 ## Select as the idle screensaver
 
@@ -153,3 +153,9 @@ Regenerate the full identifier pack:
 NearSky has been installed and opened on your TCL TV. Manufacturer-specific screensaver selection and idle behavior still need to be checked there.
 
 Airline-name provenance and public brand spellings are recorded in `app/src/main/assets/airline-names-provenance.json`. Airline names are resolved by operator code, never by substituting the registered aircraft owner's name. Cached names share the app's backup exclusions.
+
+## Version 1.5.1 controls and status
+
+The bottom-left gear is a focusable settings button in both the app preview and the actual screensaver. In full-screen preview, press remote OK to open settings; Back and Menu also reopen the panel. In the screensaver, OK on the gear opens the app settings panel, including when the app already has an existing preview activity. Back exits the interactive screensaver.
+
+A small red dot blinks beside **LIVE** while the feed is fresh. It is absent in connecting, delayed and demo states. The distance disclaimer has been removed; the footer credit reads **Developed by Rahul Singh Copyright 2026.**

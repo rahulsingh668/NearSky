@@ -1,6 +1,6 @@
 # Build, install and use NearSky
 
-NearSky is a native Android TV / Google TV screensaver. Version 1.5.0 shows the three nearest airborne aircraft across a horizontal TV, with SVG airline illustrations, airline names, flight details, and reference origin/destination routes. The bottom-right credit reads **Developed by Rahul Singh**.
+NearSky is a native Android TV / Google TV screensaver. Version 1.5.1 shows the three nearest airborne aircraft across a horizontal TV, with SVG airline illustrations, airline names, flight details, and reference origin/destination routes. The bottom-right credit reads **Developed by Rahul Singh Copyright 2026.**.
 
 See the [screenshot gallery](SCREENSHOTS.md) for the live display, menus and settings on a real TCL TV.
 
@@ -74,7 +74,7 @@ A file-transfer app is another option: transfer the APK, authorize that app to i
 2. Choose **Location & radius**.
 3. Choose a city preset or enter a display name, latitude and longitude. A display name does not automatically look up coordinates.
 4. Default: Ghaziabad, latitude `28.6692`, longitude `77.4538`, radius **50 km**. Radius can be 1–200 km.
-5. Save, then select **Full-screen preview**. Back reveals the menu; Menu opens location settings.
+5. Save, then select **Full-screen preview**. Use the bottom-left gear and OK to open settings; Back and Menu also reopen the panel in app preview. The actual screensaver gear opens the app settings panel.
 
 SVG airline illustrations are the default. **Prefer photos instead of custom SVG liveries** enables optional aircraft reference photos. **Try sample flights** demonstrates the layout with a visible DEMO indicator; the actual screensaver always uses live positions.
 

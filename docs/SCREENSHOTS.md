@@ -66,3 +66,11 @@ View position, route, airline, aircraft metadata and photo providers, the origin
 
 ![Sources, credits and privacy information](screenshots/sources-and-credits.png)
 
+
+## Version 1.5.1 — settings access and LIVE indicator
+
+Captured on the TCL TV on 23 October 2026, with its saved New York location and 50 km radius retained. The bottom-left gear is a remote-focusable settings button. A red indicator blinks beside LIVE only while the feed is fresh. The updated developer copyright appears at the bottom right; the distance disclaimer has been removed.
+
+![Live app with settings gear, LIVE indicator and copyright](screenshots/settings-gear-live.png)
+
+![Settings panel opened with remote OK](screenshots/settings-gear-panel.png)

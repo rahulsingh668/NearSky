@@ -77,6 +77,32 @@ public final class SmokeInstrumentation extends Instrumentation {
                     bitmap.recycle();check(ink>20,"Native AndroidSVG produces visible artwork: "+folder+"/"+code);
                 }
             }
+            MainActivity activity=(MainActivity)startActivitySync(new android.content.Intent(getTargetContext(),MainActivity.class)
+                .addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK).putExtra("preview",true).putExtra("demo",true));
+            waitForIdleSync();
+            runOnMainSync(()->{
+                android.view.View gear=activity.findViewById(R.id.open_settings);
+                check(gear.isShown()&&gear.isFocusable()&&gear.isClickable()&&gear.hasFocus(),"Full-screen settings control is visible and remote-focused");
+            });
+            sendKeyDownUpSync(android.view.KeyEvent.KEYCODE_DPAD_CENTER);waitForIdleSync();
+            runOnMainSync(()->{
+                android.view.View panel=activity.findViewById(R.id.settings_panel);
+                check(panel.isShown()&&activity.findViewById(R.id.open_settings).getVisibility()==android.view.View.GONE,"Remote OK opens settings and hides the background gear");
+                ((android.widget.LinearLayout)panel).getChildAt(2).performClick();
+            });
+            sendKeyDownUpSync(android.view.KeyEvent.KEYCODE_BACK);waitForIdleSync();
+            runOnMainSync(()->{
+                android.widget.LinearLayout panel=activity.findViewById(R.id.settings_panel);
+                check(panel.isShown(),"Back reopens settings from full-screen preview");panel.getChildAt(2).performClick();
+            });
+            sendKeyDownUpSync(android.view.KeyEvent.KEYCODE_MENU);waitForIdleSync();
+            runOnMainSync(()->{
+                android.widget.LinearLayout panel=activity.findViewById(R.id.settings_panel);
+                check(panel.isShown(),"Menu opens the settings panel");panel.getChildAt(2).performClick();
+                activity.onNewIntent(new android.content.Intent().putExtra("open_settings",true));
+                check(panel.isShown(),"Screensaver settings intent reopens settings in an existing activity");
+                activity.finish();
+            });
             result.putString("stream", "PASS: " + assertions + " data and settings assertions\n");
             finish(Activity.RESULT_OK,result);
         } catch(Throwable error) {
